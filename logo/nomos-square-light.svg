@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    
+  </defs>
+  <rect width="1024" height="1024" fill="#F5F0E1"></rect>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="13">
+    <path d="M 316 520 L 316 240 L 482 520 L 482 240" stroke="#163A5F"></path>
+    <path d="M 708 520 L 708 240 L 542 520 L 542 240" stroke="#6B8A5A"></path>
+  </g>
+  <circle cx="512" cy="380" r="10" fill="#163A5F"></circle>
+  <g class="wm" text-anchor="middle">
+    <text x="284" y="740">N</text>
+    <text x="398" y="740">O</text>
+    <text x="512" y="740">M</text>
+    <text x="626" y="740">O</text>
+    <text x="740" y="740">S</text>
+  </g>
+</svg>
