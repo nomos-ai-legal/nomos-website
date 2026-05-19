@@ -4,6 +4,20 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nomos AI — La délibération juridique, augmentée.</title>
+<meta name="description" content="Nomos AI forme les avocats et juristes à l'intelligence artificielle juridique. Outils MCP souverains, anonymisation RGPD, accès structuré aux bases publiques françaises et européennes. Formation en cabinet, 4 demi-journées." />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#163A5F" />
+<link rel="canonical" href="https://nomos-ai.fr/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nomos-ai.fr/" />
+<meta property="og:title" content="Nomos AI — La délibération juridique, augmentée." />
+<meta property="og:description" content="Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit. Outils MCP, anonymisation RGPD, accès aux bases publiques françaises et européennes." />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:site_name" content="Nomos AI" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Nomos AI — La délibération juridique, augmentée." />
+<meta name="twitter:description" content="Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit." />
+<link rel="icon" href="logo/nomos-round-light.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Marcellus&display=swap" rel="stylesheet">
@@ -135,6 +149,7 @@
     padding:0 var(--gutter);
   }
   section{position:relative}
+  section[id]{scroll-margin-top:90px}
   .section-pad{ padding:128px 0 }
 
   /* Méandre frise (separator) */
@@ -261,7 +276,7 @@
   /* Hero visual */
   .hero-visual{
     border:1px solid var(--color-rule);
-    background:#FFFFFF;
+    background:var(--color-background);
     overflow:hidden;
     aspect-ratio:16/9;
     box-shadow:0 1px 2px rgba(22,58,95,.04);
@@ -282,11 +297,11 @@
     height:100%; width:100%;
     display:grid; grid-template-columns: 220px 1fr 280px;
     font-size:12px;
-    color:#1a1a1c;
-    background:#FFFFFF;
+    color:var(--color-text);
+    background:var(--color-background);
   }
   .mk-side{
-    background:#FAF7EE;
+    background:var(--color-surface);
     border-right:1px solid var(--color-rule);
     padding:18px 16px;
     display:flex; flex-direction:column; gap:12px;
@@ -332,7 +347,7 @@
     border:1px solid var(--color-rule);
     padding:8px 10px;
     font-family:var(--font-mono); font-size:10.5px;
-    background:#FAF7EE;
+    background:var(--color-surface);
     display:flex; align-items:center; gap:8px;
   }
   .mk-tool-call .tag{ color:var(--color-accent); font-weight:500 }
@@ -357,7 +372,7 @@
   }
 
   .mk-tools{
-    background:#FAF7EE;
+    background:var(--color-surface);
     border-left:1px solid var(--color-rule);
     padding:18px 16px;
     display:flex; flex-direction:column; gap:14px;
@@ -392,7 +407,7 @@
     width:11px; height:11px;
     border:1px solid var(--color-rule);
     display:flex; align-items:center; justify-content:center;
-    background:#FFFFFF;
+    background:var(--color-background);
     flex-shrink:0;
   }
   .mk-tool.on .check{
@@ -857,46 +872,85 @@
     *{ scroll-behavior:auto !important }
   }
 </style>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nomos AI",
+    "url": "https://nomos-ai.fr",
+    "description": "Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12 rue de la Convention",
+      "addressLocality": "Paris",
+      "postalCode": "75015",
+      "addressCountry": "FR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "contact@nomos-ai.fr",
+      "availableLanguage": ["French", "English"]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mes données restent-elles confidentielles ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui — déploiement on-prem ou cloud souverain. Aucune donnée n'entraîne de modèle externe. Chiffrement bout-en-bout, audit trail accessible, possibilité d'héberger l'ensemble du dispositif sur votre infrastructure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quel niveau technique est requis ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aucun. La formation s'adresse aux avocats, pas aux développeurs. Tout passe par votre interface habituelle — vous tapez en français, l'assistant fait le reste."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de personnes par session ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "4 à 8 personnes. Format atelier, sur dossiers réels. Au-delà, l'efficacité pédagogique baisse ; en dessous, nous ouvrons une session inter-cabinets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quel est le tarif ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Forfait par cabinet, dégressif selon la taille. Devis sur demande, généralement sous 48 heures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sommes-nous engagés au-delà des 4 sessions ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. Vous décidez ensuite d'un suivi mensuel — ou pas. Les outils restent installés et opérationnels dans tous les cas."
+        }
+      }
+    ]
+  }
+]
+</script>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body data-screen-label="Nomos AI">
 
-<!-- ===== Reusable monogram (SVG symbol) =====
-     Deux N spéculaires : N normal (Égée) + N inversé (Olivier),
-     point central = le moment de la décision (κρίσις). -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="nomos-mark" viewBox="0 0 1024 1024">
-      <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="68">
-        <!-- N gauche : Bleu Égée -->
-        <path d="M 220 200 L 220 824" stroke="#163A5F"/>
-        <path d="M 220 200 L 440 824" stroke="#163A5F"/>
-        <path d="M 440 200 L 440 824" stroke="#163A5F"/>
-        <!-- N droit (miroir) : Olivier -->
-        <path d="M 584 200 L 584 824" stroke="#6B8A5A"/>
-        <path d="M 804 200 L 584 824" stroke="#6B8A5A"/>
-        <path d="M 804 200 L 804 824" stroke="#6B8A5A"/>
-      </g>
-      <!-- Point central : la décision après délibération -->
-      <circle cx="512" cy="512" r="32" fill="#163A5F"/>
-    </symbol>
-    <symbol id="nomos-mark-dark" viewBox="0 0 1024 1024">
-      <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="68">
-        <path d="M 220 200 L 220 824" stroke="#F5F0E1"/>
-        <path d="M 220 200 L 440 824" stroke="#F5F0E1"/>
-        <path d="M 440 200 L 440 824" stroke="#F5F0E1"/>
-        <path d="M 584 200 L 584 824" stroke="#A8BD93"/>
-        <path d="M 804 200 L 584 824" stroke="#A8BD93"/>
-        <path d="M 804 200 L 804 824" stroke="#A8BD93"/>
-      </g>
-      <circle cx="512" cy="512" r="32" fill="#F5F0E1"/>
-    </symbol>
-  </defs>
-</svg>
 
 <header class="header" id="header">
   <div class="header-inner">
     <a href="#top" class="logo" aria-label="Nomos AI — accueil">
-      <svg class="mark"><use href="#nomos-mark"/></svg>
+      <img src="logo/nomos-square-light.svg" class="mark" alt="" width="28" height="28">
       <span class="wordmark">Nomos&nbsp;AI</span>
     </a>
     <nav class="nav" aria-label="Navigation principale">
@@ -907,9 +961,9 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="header-cta">
-      <a href="#contact" class="btn btn-primary">Demander une démo <span class="arrow">→</span></a>
+      <a href="#contact" class="btn btn-primary">Demander une démo <span class="arrow" aria-hidden="true">→</span></a>
     </div>
-    <button class="burger" aria-label="Ouvrir le menu" id="burger"><span></span></button>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" id="burger"><span></span></button>
   </div>
 </header>
 
@@ -928,7 +982,7 @@
         Une formation à l'intelligence artificielle juridique, pour les avocats qui considèrent le droit comme une discussion entre savants — non comme un système clos.
       </p>
       <div class="hero-cta reveal">
-        <a href="#contact" class="btn btn-primary">Réserver une démo <span class="arrow">→</span></a>
+        <a href="#contact" class="btn btn-primary">Réserver une démo <span class="arrow" aria-hidden="true">→</span></a>
         <a href="#position" class="btn btn-ghost">Lire la position</a>
       </div>
 
@@ -1251,7 +1305,7 @@
           <h2>Demander une <em>démo</em>.</h2>
           <p>30&nbsp;min avec un avocat et un ingénieur. Pas de slides — on ouvre les outils, on prend un de vos dossiers.</p>
           <div class="contact-meta">
-            <div class="row"><span class="label">Email</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a2c1cdccd6c3c1d6e2cccdcfcdd18fc3cb8cc4d0">[email&#160;protected]</a></span></div>
+            <div class="row"><span class="label">Email</span><span><a href="mailto:contact@nomos-ai.fr">contact@nomos-ai.fr</a></span></div>
             <div class="row"><span class="label">Tél.</span><span>+33 (0)1 00 00 00 00</span></div>
             <div class="row"><span class="label">Lieu</span><span>Paris · sur site ou visio</span></div>
           </div>
@@ -1280,7 +1334,7 @@
             <span class="optional">Optionnel</span>
           </div>
           <div class="submit-row">
-            <button type="submit" class="btn btn-primary">Envoyer <span class="arrow">→</span></button>
+            <button type="submit" class="btn btn-primary">Envoyer <span class="arrow" aria-hidden="true">→</span></button>
           </div>
           <div class="rgpd">
             En envoyant ce formulaire, vous acceptez d'être recontacté par Nomos&nbsp;AI. Aucun stockage tiers, aucune publicité. Données conservées 12&nbsp;mois.
@@ -1298,7 +1352,7 @@
 <footer>
   <div class="container">
     <div class="footer-mark">
-      <svg class="mark"><use href="#nomos-mark-dark"/></svg>
+      <img src="logo/nomos-square-dark.svg" class="mark" alt="" width="36" height="36">
       <span class="wordmark">Nomos&nbsp;AI</span>
     </div>
     <div class="footer-grid">
@@ -1325,7 +1379,7 @@
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <a href="/cdn-cgi/l/email-protection#294a46475d484a5d69474644465a044840074f5b"><span class="__cf_email__" data-cfemail="ddbeb2b3a9bcbea99db3b2b0b2aef0bcb4f3bbaf">[email&#160;protected]</span></a>
+        <a href="mailto:contact@nomos-ai.fr">contact@nomos-ai.fr</a>
         <a href="#" aria-label="LinkedIn">LinkedIn ↗</a>
       </div>
     </div>
@@ -1336,7 +1390,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Sticky header
   const header = document.getElementById('header');
   const onScroll = () => {
@@ -1385,6 +1439,8 @@
       const nav = document.querySelector('.nav');
       if (!nav) return;
       const isOpen = nav.style.display === 'flex';
+      burger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      burger.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
       nav.style.display = isOpen ? '' : 'flex';
       nav.style.position = 'absolute';
       nav.style.top = '64px'; nav.style.left = '0'; nav.style.right = '0';

@@ -1,18 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <defs>
-    
-  </defs>
-  <rect width="1024" height="1024" fill="#163A5F"></rect>
+  <rect width="1024" height="1024" fill="#163A5F"/>
   <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="13">
-    <path d="M 316 520 L 316 240 L 482 520 L 482 240" stroke="#F5F0E1"></path>
-    <path d="M 708 520 L 708 240 L 542 520 L 542 240" stroke="#A8BD93"></path>
+    <path d="M 316 520 L 316 240 L 482 520 L 482 240" stroke="#F5F0E1"/>
+    <path d="M 708 520 L 708 240 L 542 520 L 542 240" stroke="#A8BD93"/>
   </g>
-  <circle cx="512" cy="380" r="10" fill="#F5F0E1"></circle>
-  <g class="wm" text-anchor="middle">
-    <text x="284" y="740">N</text>
-    <text x="398" y="740">O</text>
-    <text x="512" y="740">M</text>
-    <text x="626" y="740">O</text>
-    <text x="740" y="740">S</text>
-  </g>
+  <circle cx="512" cy="380" r="10" fill="#F5F0E1"/>
+  <text x="512" y="730" text-anchor="middle"
+        font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="300"
+        font-size="70" letter-spacing="20" fill="#F5F0E1">NOMOS</text>
 </svg>
