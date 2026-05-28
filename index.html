@@ -221,6 +221,14 @@
     margin:0;
     max-width:460px;
   }
+  .method-label{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:clamp(22px, 2.6vw, 30px);
+    font-weight:400;
+    color:var(--color-accent);
+    max-width:none;
+  }
 
   /* ===== Hero ===== */
   .hero{
@@ -275,11 +283,7 @@
 
   /* Hero visual */
   .hero-visual{
-    border:1px solid var(--color-rule);
-    background:var(--color-background);
-    overflow:hidden;
-    aspect-ratio:16/9;
-    box-shadow:0 1px 2px rgba(22,58,95,.04);
+    display:none;
   }
   .hero-proof{
     margin-top:28px;
@@ -292,129 +296,211 @@
   .hero-proof span{margin:0 14px}
   .hero-proof .dot{color:var(--color-rule)}
 
-  /* ===== LLM mockup ===== */
+  /* ===== VS CODE MOCKUP ===== */
   .mockup{
     height:100%; width:100%;
-    display:grid; grid-template-columns: 220px 1fr 280px;
+    display:grid; grid-template-columns: 36px 156px 1fr 272px;
     font-size:12px;
     color:var(--color-text);
     background:var(--color-background);
   }
+
+  /* Activity bar */
+  .mk-vsc-bar{
+    background:var(--color-primary);
+    display:flex; flex-direction:column; align-items:center;
+    padding:10px 0; gap:2px;
+    flex-shrink:0;
+  }
+  .mk-vsc-icon{
+    width:36px; height:36px;
+    display:flex; align-items:center; justify-content:center;
+    color:rgba(245,240,225,.35); font-size:15px; cursor:default;
+  }
+  .mk-vsc-icon.active{
+    color:var(--color-text-on-dark);
+    box-shadow:inset 2px 0 0 var(--color-accent-on-dark);
+  }
+
+  /* File explorer */
   .mk-side{
     background:var(--color-surface);
     border-right:1px solid var(--color-rule);
-    padding:18px 16px;
-    display:flex; flex-direction:column; gap:12px;
-  }
-  .mk-side-title{
-    font-family:var(--font-mono); font-size:10px;
-    letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--color-text-muted);
-    margin-bottom:4px;
-  }
-  .mk-conv{
-    display:flex; align-items:center; gap:8px;
-    padding:7px 8px;
-    font-size:12px;
-    color:var(--color-text);
-  }
-  .mk-conv.active{ background:var(--color-surface); color:var(--color-primary); font-weight:500 }
-  .mk-conv .dot{width:5px;height:5px;border-radius:50%;background:var(--color-text-muted)}
-  .mk-conv.active .dot{background:var(--color-accent)}
-  .mk-conv span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-
-  .mk-main{ display:flex; flex-direction:column; min-width:0 }
-  .mk-topbar{
-    height:40px;
-    border-bottom:1px solid var(--color-rule);
-    display:flex; align-items:center; padding:0 18px; gap:10px;
-    font-family:var(--font-mono); font-size:10px;
-    letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--color-text-muted);
-  }
-  .mk-topbar .pill{
-    display:inline-flex; align-items:center; gap:6px;
-    border:1px solid var(--color-rule); padding:3px 8px;
-    color:var(--color-primary);
-  }
-  .mk-topbar .pill .dot{width:5px;height:5px;background:var(--color-accent);border-radius:50%}
-  .mk-chat{ flex:1; padding:18px 28px; overflow:hidden; display:flex; flex-direction:column; gap:14px }
-  .mk-msg{ font-size:12.5px; line-height:1.55 }
-  .mk-msg.user{ color:var(--color-primary); font-weight:500 }
-  .mk-msg.user::before{content:"Vous"; color:var(--color-text-muted); font-weight:400; font-family:var(--font-mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; margin-right:10px}
-  .mk-msg.assist::before{content:"Nomos"; color:var(--color-text-muted); font-weight:400; font-family:var(--font-mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; margin-right:10px}
-  .mk-tool-call{
-    border:1px solid var(--color-rule);
-    padding:8px 10px;
-    font-family:var(--font-mono); font-size:10.5px;
-    background:var(--color-surface);
-    display:flex; align-items:center; gap:8px;
-  }
-  .mk-tool-call .tag{ color:var(--color-accent); font-weight:500 }
-  .mk-tool-call .arrow{ color:var(--color-text-muted) }
-  .mk-input{
-    border-top:1px solid var(--color-rule);
-    padding:14px 18px;
-    display:flex; align-items:center; gap:10px;
-    color:var(--color-text-muted);
-    font-size:12px;
-  }
-  .mk-input .field{
-    flex:1; height:30px;
-    border:1px solid var(--color-rule);
-    padding:0 12px; display:flex; align-items:center;
-    font-style:italic; color:var(--color-text-muted);
-  }
-  .mk-input .send{
-    width:30px; height:30px;
-    background:var(--color-primary); color:var(--color-background);
-    display:flex; align-items:center; justify-content:center; font-size:12px;
-  }
-
-  .mk-tools{
-    background:var(--color-surface);
-    border-left:1px solid var(--color-rule);
-    padding:18px 16px;
-    display:flex; flex-direction:column; gap:14px;
+    padding:0;
+    display:flex; flex-direction:column;
     overflow:hidden;
   }
-  .mk-tools-head{
-    display:flex; align-items:center; justify-content:space-between;
-    font-family:var(--font-mono); font-size:10px;
-    letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--color-text-muted);
-  }
-  .mk-tools-head .badge{
-    background:var(--color-primary); color:var(--color-background);
-    padding:1px 6px; font-size:9px;
-  }
-  .mk-tool-group-title{
+  .mk-exp-header{
     font-family:var(--font-mono); font-size:9.5px;
     letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--color-primary); font-weight:500;
-    padding:6px 0 4px; border-bottom:1px solid var(--color-rule);
-    display:flex; justify-content:space-between; align-items:center;
-    margin-bottom:4px;
-  }
-  .mk-tool-group-title .count{ color:var(--color-text-muted); font-weight:400 }
-  .mk-tool{
-    display:flex; align-items:center; gap:8px;
-    padding:5px 4px;
-    font-family:var(--font-mono); font-size:10px;
-    color:var(--color-text);
-  }
-  .mk-tool .check{
-    width:11px; height:11px;
-    border:1px solid var(--color-rule);
-    display:flex; align-items:center; justify-content:center;
-    background:var(--color-background);
+    color:var(--color-text-muted);
+    padding:9px 12px 7px;
+    border-bottom:1px solid var(--color-rule);
     flex-shrink:0;
   }
-  .mk-tool.on .check{
-    background:var(--color-accent); border-color:var(--color-accent);
-    color:#FFFFFF; font-size:8px;
+  .mk-exp-section{
+    font-family:var(--font-mono); font-size:9.5px;
+    letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--color-primary); font-weight:500;
+    padding:8px 10px 4px;
+    display:flex; align-items:center; gap:5px;
   }
-  .mk-tool .name{ flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+  .mk-exp-section::before{ content:"▼"; font-size:7px; color:var(--color-text-muted); margin-right:2px }
+  .mk-exp-item{
+    display:flex; align-items:center; gap:6px;
+    padding:3px 10px 3px 22px;
+    font-family:var(--font-mono); font-size:10px;
+    color:var(--color-text);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    cursor:default;
+  }
+  .mk-exp-item.folder{ padding-left:10px; color:var(--color-text-muted) }
+  .mk-exp-item.folder::before{ content:"▶"; font-size:7px; margin-right:3px }
+  .mk-exp-item.folder.open::before{ content:"▼"; font-size:7px; margin-right:3px }
+  .mk-exp-item.l2{ padding-left:22px }
+  .mk-exp-item.active{ background:rgba(22,58,95,.09); color:var(--color-primary); font-weight:500 }
+  .mk-exp-item .dot{ width:5px; height:5px; border-radius:50%; background:var(--color-accent); flex-shrink:0 }
+
+  /* Editor */
+  .mk-main{
+    display:flex; flex-direction:column; min-width:0;
+    border-right:1px solid var(--color-rule);
+  }
+  .mk-tab-bar{
+    height:34px;
+    border-bottom:1px solid var(--color-rule);
+    display:flex; align-items:stretch;
+    background:var(--color-surface);
+    flex-shrink:0; overflow:hidden;
+  }
+  .mk-tab{
+    display:flex; align-items:center; gap:7px;
+    padding:0 13px;
+    font-family:var(--font-mono); font-size:10px;
+    color:var(--color-text-muted);
+    border-right:1px solid var(--color-rule);
+    cursor:default; white-space:nowrap;
+  }
+  .mk-tab.active{
+    background:var(--color-background);
+    color:var(--color-primary);
+    border-top:2px solid var(--color-accent);
+  }
+  .mk-tab .close{ color:var(--color-rule); font-size:9px }
+  .mk-tab.active .close{ color:var(--color-text-muted) }
+  .mk-editor-body{
+    flex:1; overflow:hidden;
+    padding:10px 0;
+  }
+  .mk-code-line{
+    display:flex; align-items:baseline;
+    line-height:1.72;
+  }
+  .mk-line-num{
+    width:34px; text-align:right; padding-right:14px;
+    font-family:var(--font-mono); font-size:10px;
+    color:var(--color-rule); flex-shrink:0; user-select:none;
+  }
+  .mk-line-content{
+    font-family:var(--font-mono); font-size:10.5px;
+    color:var(--color-text); white-space:pre;
+  }
+  .md-h1{ color:var(--color-primary); font-weight:600 }
+  .md-h2{ color:var(--color-primary) }
+  .md-bold{ color:var(--color-primary); font-weight:500 }
+  .md-muted{ color:var(--color-text-muted); font-style:italic }
+  .md-arrow{ color:var(--color-accent) }
+  .mk-status-bar{
+    height:20px;
+    background:var(--color-primary);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 10px;
+    font-family:var(--font-mono); font-size:9px;
+    color:rgba(245,240,225,.55);
+    flex-shrink:0;
+  }
+  .mk-status-bar .st-accent{ color:var(--color-accent-on-dark) }
+
+  /* Claude Code panel */
+  .mk-tools{
+    background:var(--color-surface);
+    display:flex; flex-direction:column;
+    overflow:hidden;
+  }
+  .mk-cc-header{
+    height:34px;
+    border-bottom:1px solid var(--color-rule);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 13px;
+    font-family:var(--font-mono); font-size:10px;
+    letter-spacing:0.1em; text-transform:uppercase;
+    flex-shrink:0;
+  }
+  .mk-cc-title{ color:var(--color-primary); font-weight:600 }
+  .mk-cc-model{
+    border:1px solid var(--color-rule); padding:2px 7px;
+    font-size:9px; color:var(--color-text-muted);
+    display:flex; align-items:center; gap:4px;
+  }
+  .mk-cc-model::before{ content:"●"; color:var(--color-accent); font-size:7px }
+  .mk-cc-chat{
+    flex:1; overflow:hidden;
+    padding:12px 13px 8px;
+    display:flex; flex-direction:column; gap:9px;
+  }
+  .mk-cc-msg{ font-size:11px; line-height:1.5 }
+  .mk-cc-msg.user{ color:var(--color-primary); font-weight:500 }
+  .mk-cc-msg.user::before{
+    content:"Vous"; display:block;
+    font-family:var(--font-mono); font-size:9px;
+    letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--color-text-muted); font-weight:400; margin-bottom:2px;
+  }
+  .mk-cc-msg.assist{ color:var(--color-text) }
+  .mk-cc-msg.assist::before{
+    content:"Claude"; display:block;
+    font-family:var(--font-mono); font-size:9px;
+    letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--color-text-muted); font-weight:400; margin-bottom:2px;
+  }
+  .mk-skill-invoke{
+    display:flex; align-items:center; gap:6px;
+    padding:5px 8px;
+    background:var(--color-background);
+    border:1px solid var(--color-rule);
+    font-family:var(--font-mono); font-size:9.5px;
+  }
+  .sk-tag{ color:var(--color-accent); font-weight:500 }
+  .sk-sep{ color:var(--color-rule) }
+  .sk-args{ color:var(--color-text-muted) }
+
+  /* Skills list panel */
+  .mk-skills-panel{
+    border-top:1px solid var(--color-rule);
+    padding:9px 13px 11px;
+    flex-shrink:0;
+  }
+  .mk-skills-title{
+    font-family:var(--font-mono); font-size:9px;
+    letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--color-text-muted);
+    margin-bottom:7px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .mk-skills-badge{
+    background:var(--color-primary); color:var(--color-background);
+    padding:1px 5px; font-size:8px;
+  }
+  .mk-skills-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:3px 4px;
+  }
+  .mk-skill-row{
+    display:flex; align-items:center; gap:5px;
+    font-family:var(--font-mono); font-size:9.5px;
+    color:var(--color-text); padding:2px 0;
+  }
+  .sk-dot{ width:4px; height:4px; border-radius:50%; background:var(--color-accent); flex-shrink:0 }
+  .sk-name{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
 
   /* ===== Position / Manifeste ===== */
   .manifeste-grid{
@@ -521,7 +607,7 @@
   /* ===== Formation strip ===== */
   .formation-strip{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(2,1fr);
     border:1px solid var(--color-rule);
     background:var(--color-background);
   }
@@ -563,6 +649,55 @@
   .formation-meta .label{ color:var(--color-primary) }
   .formation-cta{ margin-top:36px }
 
+  /* ===== VS Code teaser ===== */
+  .vscode-teaser{
+    margin-top:48px;
+    padding:36px 40px;
+    border:1px solid var(--color-rule);
+    border-left:3px solid var(--color-primary);
+    background:var(--color-background);
+  }
+  .vscode-teaser-tag{
+    font-family:var(--font-mono); font-size:11px;
+    letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--color-accent); margin-bottom:16px;
+  }
+  .vscode-teaser-title{
+    font-family:var(--font-display); font-weight:500;
+    font-size:clamp(22px,2.4vw,28px); color:var(--color-primary);
+    margin:0 0 20px;
+  }
+  .vscode-teaser-body p{
+    color:var(--color-text); font-size:15px; line-height:1.7;
+    margin:0 0 12px; max-width:72ch;
+  }
+  .vscode-teaser-body p:last-child{ margin-bottom:0 }
+
+  /* ===== Formation steps ===== */
+  .formation-steps{ display:flex; flex-direction:column; gap:0; margin-bottom:0 }
+  .formation-group{ border:1px solid var(--color-rule); margin-bottom:24px }
+  .formation-group:last-child{ margin-bottom:0 }
+  .formation-group .formation-strip{ border:none; border-top:1px solid var(--color-rule) }
+  .formation-step-header{
+    padding:18px 28px;
+    display:flex; align-items:baseline; gap:16px;
+    background:var(--color-surface);
+  }
+  .step-num{
+    font-family:var(--font-mono); font-size:11px;
+    letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--color-accent); flex-shrink:0;
+  }
+  .step-title{
+    font-family:var(--font-display); font-size:20px;
+    font-weight:500; color:var(--color-primary);
+  }
+  .step-hint{
+    font-family:var(--font-mono); font-size:11px;
+    color:var(--color-text-muted); margin-left:auto;
+    opacity:0.6; transition:opacity .2s ease, color .2s ease;
+    white-space:nowrap;
+  }
   .link-underline{
     position:relative;
     color:var(--color-primary);
@@ -721,6 +856,12 @@
   }
   .contact-meta .row{ display:flex; gap:24px }
   .contact-meta .label{ color:var(--color-primary); min-width:60px }
+  .booking-btn{ margin-top:32px; align-self:flex-start }
+  .contact-or{
+    margin-top:36px; margin-bottom:0;
+    font-family:var(--font-mono); font-size:11px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--color-text-muted);
+  }
 
   form{ display:flex; flex-direction:column; gap:8px }
   .field{ position:relative; padding-top:20px }
@@ -855,15 +996,19 @@
     .grid-3{ grid-template-columns:1fr; border-top:1px solid var(--color-rule); gap:0 }
     .card{ border:none; border-bottom:1px solid var(--color-rule); padding:32px 0; min-height:0 }
     .card:hover{ transform:none; border-color:transparent; box-shadow:none; border-bottom-color:var(--color-rule) }
-    .formation-strip{ grid-template-columns:1fr; border:none; border-top:1px solid var(--color-rule) }
+    .formation-strip{ grid-template-columns:1fr }
+    .formation-group{ margin-bottom:16px }
+    .formation-step-header{ padding:14px 0; flex-wrap:wrap }
+    .step-hint{ display:none }
     .formation-cell{ border-right:none; border-bottom:1px solid var(--color-rule); padding:28px 0; min-height:0 }
+    .formation-cell:last-child{ border-bottom:none }
     .signature-grid, .contact-grid{ grid-template-columns:1fr; gap:48px }
     .manifeste-grid{ grid-template-columns:1fr; gap:40px }
     .manifeste-quote{ margin-top:64px; padding:24px 0 }
     .footer-grid{ grid-template-columns:1fr 1fr; gap:32px }
     .footer-bottom{ flex-direction:column; gap:12px; align-items:flex-start }
     .mockup{ grid-template-columns: 1fr }
-    .mk-side, .mk-tools{ display:none }
+    .mk-vsc-bar, .mk-side, .mk-tools{ display:none }
     .hero-proof span{ display:block; margin:3px 0 }
     .hero-proof .dot{ display:none }
   }
@@ -893,52 +1038,8 @@
       "email": "contact@nomos-ai.fr",
       "availableLanguage": ["French", "English"]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Mes données restent-elles confidentielles ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui — déploiement on-prem ou cloud souverain. Aucune donnée n'entraîne de modèle externe. Chiffrement bout-en-bout, audit trail accessible, possibilité d'héberger l'ensemble du dispositif sur votre infrastructure."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quel niveau technique est requis ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Aucun. La formation s'adresse aux avocats, pas aux développeurs. Tout passe par votre interface habituelle — vous tapez en français, l'assistant fait le reste."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Combien de personnes par session ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "4 à 8 personnes. Format atelier, sur dossiers réels. Au-delà, l'efficacité pédagogique baisse ; en dessous, nous ouvrons une session inter-cabinets."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quel est le tarif ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Forfait par cabinet, dégressif selon la taille. Devis sur demande, généralement sous 48 heures."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Sommes-nous engagés au-delà des 4 sessions ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Non. Vous décidez ensuite d'un suivi mensuel — ou pas. Les outils restent installés et opérationnels dans tous les cas."
-        }
-      }
-    ]
+  }
+]
   }
 ]
 </script>
@@ -954,15 +1055,12 @@
       <span class="wordmark">Nomos&nbsp;AI</span>
     </a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="#position">Position</a>
-      <a href="#outils">Outils</a>
-      <a href="#formations">Formation</a>
-      <a href="#signature">L'équipe</a>
-      <a href="#faq">FAQ</a>
+      <a href="#methode">Notre Méthode</a>
+      <a href="#outils">Vos nouvelles pratiques</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="header-cta">
-      <a href="#contact" class="btn btn-primary">Demander une démo <span class="arrow" aria-hidden="true">→</span></a>
+      <a href="#contact" class="btn btn-primary">Nous contacter <span class="arrow" aria-hidden="true">→</span></a>
     </div>
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" id="burger"><span></span></button>
   </div>
@@ -976,128 +1074,182 @@
       <p class="hero-eyebrow reveal">
         <span class="greek">νόμος</span>
         <span class="dot">·</span>
-        <span>La règle qui se délibère</span>
+        <span>Le discernement juridique, augmenté</span>
       </p>
-      <h1 class="reveal">Le discernement juridique,<br/><em>augmentée.</em></h1>
-      <p class="hero-sub reveal">
-        Vous former pour construire vos outils.
-      </p>
-      <div class="hero-cta reveal">
-        <a href="#contact" class="btn btn-primary">Demander une démo <span class="arrow" aria-hidden="true">→</span></a>
-        <a href="#outils" class="btn btn-ghost">Découvrir la méthode</a>
-      </div>
+      <h1 class="reveal">Vous former pour constuire<br/><em>vos outils.</em></h1>
 
       <div class="hero-visual reveal">
-        <div class="mockup" role="img" aria-label="Capture d'un poste de travail LLM avec panneau d'outils MCP Nomos">
-          <aside class="mk-side">
-            <div class="mk-side-title">Conversations</div>
-            <div class="mk-conv active"><span class="dot"></span><span>Affaire Durand · synthèse</span></div>
-            <div class="mk-conv"><span class="dot"></span><span>Conclusions Trib. Adm.</span></div>
-            <div class="mk-conv"><span class="dot"></span><span>Jurisprudence Cass. Com.</span></div>
-            <div class="mk-conv"><span class="dot"></span><span>Note de droit — RGPD</span></div>
-            <div class="mk-conv"><span class="dot"></span><span>Anonymisation 04-12</span></div>
-            <div class="mk-conv"><span class="dot"></span><span>Mémoire Cass. Civ. 1</span></div>
+        <div class="mockup" role="img" aria-label="VS Code avec Claude Code — travail sur dossier juridique avec skills de recherche">
+
+          <!-- Activity bar VS Code -->
+          <aside class="mk-vsc-bar" aria-hidden="true">
+            <div class="mk-vsc-icon active">⊟</div>
+            <div class="mk-vsc-icon">⊞</div>
+            <div class="mk-vsc-icon">⊛</div>
+            <div class="mk-vsc-icon" style="margin-top:auto">⊙</div>
           </aside>
+
+          <!-- Explorateur de fichiers -->
+          <aside class="mk-side">
+            <div class="mk-exp-header">Explorateur</div>
+            <div class="mk-exp-section">Dossier-Martin</div>
+            <div class="mk-exp-item folder open">01-pieces</div>
+            <div class="mk-exp-item l2">note-huissier.pdf</div>
+            <div class="mk-exp-item l2">factures-2022.pdf</div>
+            <div class="mk-exp-item folder open">02-recherche</div>
+            <div class="mk-exp-item l2 active"><span class="dot"></span>notes-cedh.md</div>
+            <div class="mk-exp-item l2">arrets-cassation.md</div>
+            <div class="mk-exp-item">conclusions-v3.md</div>
+            <div class="mk-exp-item">memoire-amplitatif.md</div>
+          </aside>
+
+          <!-- Éditeur -->
           <div class="mk-main">
-            <div class="mk-topbar">
-              <span class="pill"><span class="dot"></span>Nomos MCP connecté</span>
-              <span>·  Affaire Durand</span>
+            <div class="mk-tab-bar">
+              <div class="mk-tab active">notes-cedh.md <span class="close">×</span></div>
+              <div class="mk-tab">memoire-amplitatif.md</div>
             </div>
-            <div class="mk-chat">
-              <div class="mk-msg user">Cherche au dossier Durand les pièces relatives à la rupture brutale, et croise avec la jurisprudence récente de la chambre commerciale.</div>
-              <div class="mk-tool-call">
-                <span class="tag">nomos.dossiers.search</span>
-                <span class="arrow">→</span>
-                <span>{ dossier: "Durand", q: "rupture brutale" }</span>
-              </div>
-              <div class="mk-tool-call">
-                <span class="tag">nomos.judilibre.query</span>
-                <span class="arrow">→</span>
-                <span>{ juridiction: "cass-com", periode: "2023-2025" }</span>
-              </div>
-              <div class="mk-msg assist">11 pièces identifiées au dossier (PV de constat, courriers RAR, factures 2021–2023). En jurisprudence : 4 arrêts pertinents, dont Com. 14 mai 2024 — applicable au cas d'espèce.</div>
+            <div class="mk-editor-body">
+              <div class="mk-code-line"><span class="mk-line-num">1</span><span class="mk-line-content"><span class="md-h1"># Recherche CEDH — Affaire Martin</span></span></div>
+              <div class="mk-code-line"><span class="mk-line-num">2</span><span class="mk-line-content"></span></div>
+              <div class="mk-code-line"><span class="mk-line-num">3</span><span class="mk-line-content"><span class="md-h2">## Arrêts pertinents — Art. 8</span></span></div>
+              <div class="mk-code-line"><span class="mk-line-num">4</span><span class="mk-line-content"></span></div>
+              <div class="mk-code-line"><span class="mk-line-num">5</span><span class="mk-line-content"><span class="md-bold">**CEDH, 4 mai 2000, Rotaru c. Roumanie**</span></span></div>
+              <div class="mk-code-line"><span class="mk-line-num">6</span><span class="mk-line-content"><span class="md-muted">Données personnelles — surveillance étatique</span></span></div>
+              <div class="mk-code-line"><span class="mk-line-num">7</span><span class="mk-line-content"><span class="md-arrow">→</span> Applicable : collecte sans base légale</span></div>
+              <div class="mk-code-line"><span class="mk-line-num">8</span><span class="mk-line-content"></span></div>
+              <div class="mk-code-line"><span class="mk-line-num">9</span><span class="mk-line-content"><span class="md-bold">**CEDH, 13 sept. 2018, Big Brother Watch**</span></span></div>
+              <div class="mk-code-line"><span class="mk-line-num">10</span><span class="mk-line-content"><span class="md-muted">Surveillance de masse — art. 8 + art. 10</span></span></div>
             </div>
-            <div class="mk-input">
-              <div class="field">Poursuivre la délibération…</div>
-              <div class="send">→</div>
+            <div class="mk-status-bar">
+              <span>notes-cedh.md</span>
+              <span class="st-accent">● claude-sonnet-4-6</span>
+              <span>Ln 7, Col 1</span>
             </div>
           </div>
+
+          <!-- Claude Code — chat + skills -->
           <aside class="mk-tools">
-            <div class="mk-tools-head">
-              <span>Outils MCP</span>
-              <span class="badge">3 connectés</span>
+            <div class="mk-cc-header">
+              <span class="mk-cc-title">Claude Code</span>
+              <span class="mk-cc-model">claude-sonnet-4-6</span>
             </div>
-            <div>
-              <div class="mk-tool-group-title"><span>Nomos · Cabinet</span><span class="count">5</span></div>
-              <div class="mk-tool on"><span class="check">✓</span><span class="name">nomos.dossiers.search</span></div>
-              <div class="mk-tool on"><span class="check">✓</span><span class="name">nomos.dossiers.get</span></div>
-              <div class="mk-tool on"><span class="check">✓</span><span class="name">nomos.anonymise</span></div>
-              <div class="mk-tool"><span class="check"></span><span class="name">nomos.permissions</span></div>
-              <div class="mk-tool"><span class="check"></span><span class="name">nomos.audit.trail</span></div>
+            <div class="mk-cc-chat">
+              <div class="mk-cc-msg user">Recherche CEDH sur données personnelles — affaire Martin</div>
+              <div class="mk-skill-invoke">
+                <span class="sk-tag">▶ /recherche-CEDH</span>
+                <span class="sk-sep">·</span>
+                <span class="sk-args">art. 8, données perso</span>
+              </div>
+              <div class="mk-skill-invoke">
+                <span class="sk-tag">⚙ cedh.search_cases</span>
+                <span class="sk-sep">→</span>
+                <span class="sk-args">{ articles: ["8"] }</span>
+              </div>
+              <div class="mk-cc-msg assist">3 arrêts retenus. Rotaru c. Roumanie (2000) directement applicable — violation constatée, absence de base légale suffisante pour la collecte.</div>
             </div>
-            <div>
-              <div class="mk-tool-group-title"><span>Nomos · Bases publiques</span><span class="count">4</span></div>
-              <div class="mk-tool on"><span class="check">✓</span><span class="name">arianeweb.search</span></div>
-              <div class="mk-tool on"><span class="check">✓</span><span class="name">legifrance.query</span></div>
-              <div class="mk-tool on"><span class="check">✓</span><span class="name">judilibre.query</span></div>
-              <div class="mk-tool"><span class="check"></span><span class="name">eurlex.search</span></div>
+            <div class="mk-skills-panel">
+              <div class="mk-skills-title">
+                <span>Skills juridiques</span>
+                <span class="mk-skills-badge">8 actifs</span>
+              </div>
+              <div class="mk-skills-grid">
+                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-CEDH</span></div>
+                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-Ccass</span></div>
+                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-CE</span></div>
+                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-CJUE</span></div>
+                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-ADLC</span></div>
+                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-BOFIP</span></div>
+                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">redaction-MA</span></div>
+                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">anonymisation</span></div>
+              </div>
             </div>
           </aside>
+
         </div>
-      </div>
-      <div class="hero-proof reveal">
-        <span>MCP-native</span><span class="dot">·</span>
-        <span>RGPD</span><span class="dot">·</span>
-        <span>On-prem possible</span><span class="dot">·</span>
-        <span>FR + EN</span>
       </div>
     </div>
   </section>
 
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
-  <!-- ===== I — POSITION ===== -->
-  <section class="section-pad" id="position" data-screen-label="Position">
+  <!-- ===== I — NOTRE MÉTHODE  4 demi-journées Des outils utilisables le lendemain ===== -->
+  <section class="section-pad" id="methode" data-screen-label="Notre Méthode">
     <div class="container">
-      <div class="section-label"><span class="num">I.</span><span>Position</span></div>
+      <div class="section-label"><span class="num">I.</span><span>Notre Méthode</span></div>
 
-      <div class="section-head reveal">
-        <h2>Créer des outils au service des <em>décisions stratégiques</em>.</h2>
-        <p>L'intelligence artificielle, correctement configurée, élargit l'espace de délibération, sans s'y substituer. Avancer par séquences courtes. L'avocat valide, oriente, corrige. Le raisonnement reste entièrement le sien.</p>
+      <p class="reveal" style="font-family:var(--font-display);font-weight:500;font-size:clamp(34px, 4.4vw, 48px);line-height:1.08;letter-spacing:-0.005em;color:var(--color-primary);margin:48px 0 48px;max-width:520px">Les meilleurs outils IA sont ceux <em style="font-style:italic;color:var(--color-accent);font-weight:500">que vous aurez construits.</em></p>
+
+      <div class="formation-steps reveal">
+
+        <div class="formation-group">
+          <div class="formation-step-header" id="step1-trigger">
+            <span class="step-num">Étape 1</span>
+            <span class="step-title">Prise en main</span>
+          </div>
+          <div class="formation-strip">
+            <div class="formation-cell">
+              <div class="tag">DJ · I — Environnement</div>
+              <h4>Set-up de l'environnement et première prise en main.</h4>
+              <p>Solution d'anonymisation en local, connecteurs sur des données juridiques publiques (MCP) et skills de recherche NOMOS : Ccass, CJUE, CEDH, BOFIP et pratique décisionnelle des AAI (commission européenne, AMF, Adlc, ACPR, CNIL).Tests sur des questions juridiques de votre choix.</p>
+            </div>
+            <div class="formation-cell">
+              <div class="tag">DJ · II — Prise en main</div>
+              <h4>Utilisation en conditions réelles sur Claude Cowork et Plugin Word.</h4>
+              <p>Prise en main de l'interface puis sur un dossier en cours.</p
+            </div>
+          </div>
+        </div>
+
+        <div class="formation-group">
+          <div class="formation-step-header" id="step2-trigger">
+            <span class="step-num">Étape 2</span>
+            <span class="step-title">Construire son environnement IA</span>
+          </div>
+          <div class="formation-strip">
+            <div class="formation-cell">
+              <div class="tag">DJ · III —  Environnement sur mesure </div>
+              <h4>Elaborer son cadre méthodologique avec l'IA.</h4>
+              <p>Façonner les skills propres à la pratique du cabinet. Structurer une tâche hautement technique avec l'IA : conclusions, mémoires, consultations. Pour ceux qui souhaitent aller plus loin : configuration de VS Code.</p>
+            </div>
+            <div class="formation-cell">
+              <div class="tag">DJ · IV — Accompagnement sur un dossier de A à Z</div>
+              <h4>Travail sur un dossier réel du cabinet.</h4>
+              <p>A vous de jouer.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="manifeste-grid reveal">
-        <div class="manifeste-col">
-          <div class="manifeste-tag">i.</div>
-          <p>Délibérer, c'est confronter des règles, des principes, des espèces. C'est tenir la question <em>ouverte</em> — au moins le temps de la juger. La règle de droit ne s'applique pas&nbsp;: elle se discute, elle se pèse, elle s'interprète à la lumière du cas.</p>
-        </div>
-        <div class="manifeste-col">
-          <div class="manifeste-tag">ii.</div>
-          <p>L'IA générative n'est pas un oracle. C'est un <em>interlocuteur</em> de plus dans la délibération&nbsp;: qui retrouve les textes, met en regard les espèces, propose des contre-arguments, accélère l'aller-retour entre la règle et le fait. Le jugement reste à l'avocat.</p>
-        </div>
-        <div class="manifeste-col">
-          <div class="manifeste-tag">iii.</div>
-          <p>Nous construisons des outils — et nous formons à leur usage — pour que cette discussion ait lieu&nbsp;: avec les bonnes sources, dans les bonnes conditions, sans rien céder sur la <em>confidentialité</em> ni la rigueur du raisonnement.</p>
+      <div class="formation-meta reveal">
+        <span><span class="label">Format</span> 2 + 2 demi-journées</span>
+        <span><span class="label">Effectif</span> jusqu'à 5 collaborateurs</span>
+        <span><span class="label">Lieu</span> intra-cabinet</span>
+        <span><span class="label">Tarif</span> 5000€</span>
+      </div>
+
+      <div class="vscode-teaser reveal">
+        <div class="vscode-teaser-tag">Aller plus loin</div>
+        <h3 class="vscode-teaser-title">Et si on passait à VS Code ? Notre option qui fait toute la différence.</h3>
+        <div class="vscode-teaser-body">
+          <p>Claude.ai impose le modèle Anthropic. VS Code est l'environnement du développeur. Notre ambition est qu'il soit aussi le vôtre. VS CODE permet de configurer librement le modèle utilisé : Anthropic, Mistral, Google, Meta, ou tout fournisseur proposant une API compatible. Si un autre modèle s'avère plus performant, mieux adapté à votre pratique ou plus éthique, vous saurez basculer sans perdre votre environnement de travail. C'est la seule interface qui garantit cette indépendance.</p>
+          <p>VSCODE permet également un travail plus fluide avec l'IA, est nettement moins énergivore en tokens, et les modèles y sont plus performants.L'interface a quelque-chose d'effrayant pour le juriste. Avec Nomos, ce sentiment devient un lointain souvenir.</p>
         </div>
       </div>
 
-      <div class="manifeste-quote reveal">
-        <span class="greek">κρίσις</span>
-        <p>« Nomos AI arme la délibération.<br/><em>Elle ne la remplace pas.</em> »</p>
-      </div>
     </div>
   </section>
 
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
-  <!-- ===== II — OUTILS ===== -->
-  <section class="section-pad" id="outils" data-screen-label="Outils">
+<!-- ===== II — OUTILS ===== -->
+  <section class="section-pad" id="outils" data-screen-label="Vos nouvelles pratiques">
     <div class="container">
-      <div class="section-label"><span class="num">II.</span><span>Outils</span></div>
+      <div class="section-label"><span class="num">II.</span><span>Vos nouvelles pratiques</span></div>
 
-      <div class="section-head reveal">
+      <div class="section-head reveal" style="margin-top:48px">
         <h2>Trois pratiques fondamentales <em>à acquérir</em>.</h2>
-        <p>Les meilleurs outils sont ceux que les praticiens eux-mêmes ont construits. Nomos vous accompagne pour façonner vos instruments de travail pendant la formation.</p>
       </div>
 
       <div class="grid-3">
@@ -1105,203 +1257,19 @@
           <div class="card-tag">P · I — Méthode</div>
           <h3>Construire son cadre méthodologique.</h3>
           <p>Compétences spécialisées, templates d'instructions permanentes par type de dossier : l'IA doit travailler selon votre méthode, pas la sienne. Ce que vous construisez pendant la formation, vous l'utilisez le lendemain.</p>
-          <div class="card-schema">
-            <svg width="100%" height="80" viewBox="0 0 240 80" fill="none" stroke="#163A5F" stroke-width="1" aria-hidden="true">
-              <rect x="0.5" y="20" width="60" height="40" />
-              <text x="30" y="44" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#163A5F" stroke="none">LLM</text>
-              <line x1="60" y1="40" x2="100" y2="40" />
-              <circle cx="100" cy="40" r="3" fill="#6B8A5A" stroke="none"/>
-              <line x1="100" y1="40" x2="140" y2="40" stroke-dasharray="3,3" />
-              <rect x="140" y="20" width="60" height="40" />
-              <text x="170" y="38" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#163A5F" stroke="none">skill</text>
-              <text x="170" y="50" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#7A7567" stroke="none">votre méthode</text>
-              <line x1="200" y1="40" x2="220" y2="40" />
-              <path d="M 220 28 L 240 28 L 240 52 L 220 52 Z" />
-            </svg>
-          </div>
         </article>
 
         <article class="card reveal">
           <div class="card-tag">P · II — Confidentialité</div>
           <h3>Configurer une confidentialité native.</h3>
           <p>Les données client ne transitent jamais en clair. L'anonymisation est intégrée au flux de travail, avant tout traitement, conformément aux recommandations déontologiques en vigueur.</p>
-          <div class="card-schema">
-            <svg width="100%" height="80" viewBox="0 0 240 80" fill="none" stroke="#163A5F" stroke-width="1" aria-hidden="true">
-              <rect x="0.5" y="20" width="70" height="40" />
-              <text x="35" y="38" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#163A5F" stroke="none">M. Durand</text>
-              <text x="35" y="50" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#7A7567" stroke="none">12 rue …</text>
-              <line x1="70" y1="40" x2="100" y2="40" />
-              <rect x="100" y="28" width="40" height="24" />
-              <text x="120" y="44" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#6B8A5A" stroke="none">⌗</text>
-              <line x1="140" y1="40" x2="170" y2="40" />
-              <rect x="170" y="20" width="70" height="40" />
-              <text x="205" y="38" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#163A5F" stroke="none">[PERS_01]</text>
-              <text x="205" y="50" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#7A7567" stroke="none">[ADDR_01]</text>
-            </svg>
-          </div>
         </article>
 
         <article class="card reveal">
           <div class="card-tag">P · III — Sources</div>
           <h3>Permettre à l'IA d'interroger les sources primaires.</h3>
-          <p>Légifrance, CEDH, EUR-Lex, CURIA, HUDOC, BOFiP, Ariane Web : les bases publiques officielles, en accès direct. Les requêtes interrogent les sources en temps réel, sans approximation vectorielle. Pas d'hallucination de référence.</p>
-          <div class="card-schema">
-            <svg width="100%" height="80" viewBox="0 0 240 80" fill="none" stroke="#163A5F" stroke-width="1" aria-hidden="true">
-              <rect x="90" y="30" width="60" height="20" />
-              <text x="120" y="44" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#163A5F" stroke="none">MCP</text>
-              <line x1="90" y1="40" x2="40" y2="14" />
-              <line x1="90" y1="40" x2="40" y2="66" />
-              <line x1="150" y1="40" x2="200" y2="14" />
-              <line x1="150" y1="40" x2="200" y2="66" />
-              <text x="22" y="14" font-family="JetBrains Mono" font-size="8" fill="#163A5F" stroke="none">Ariane</text>
-              <text x="22" y="70" font-family="JetBrains Mono" font-size="8" fill="#163A5F" stroke="none">Légifr.</text>
-              <text x="200" y="14" font-family="JetBrains Mono" font-size="8" fill="#163A5F" stroke="none">CURIA</text>
-              <text x="200" y="70" font-family="JetBrains Mono" font-size="8" fill="#163A5F" stroke="none">EUR-Lex</text>
-              <circle cx="40" cy="11" r="2" fill="#6B8A5A" stroke="none"/>
-              <circle cx="40" cy="69" r="2" fill="#6B8A5A" stroke="none"/>
-              <circle cx="200" cy="11" r="2" fill="#6B8A5A" stroke="none"/>
-              <circle cx="200" cy="69" r="2" fill="#6B8A5A" stroke="none"/>
-            </svg>
-          </div>
+          <p>Légifrance, CEDH, EUR-Lex, CURIA, HUDOC, BOFiP, Ariane Web : les bases publiques officielles, en accès direct. Les requêtes interrogent les sources en temps réel, sans approximation vectorielle. Pas d'hallucination. Et avec un bon skill, une IA qui sait comprendre une source.</p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
-
-  <!-- ===== III — FORMATION ===== -->
-  <section class="section-pad" id="formations" data-screen-label="Formation">
-    <div class="container">
-      <div class="section-label"><span class="num">III.</span><span>Formation</span></div>
-
-      <div class="section-head reveal">
-        <h2>Discerner avec l'IA en pratique.<br/><em>Vos vrais dossiers, dès le premier jour.</em></h2>
-        <p>Ce que vous construisez pendant les quatre demi-journées, vous l'utilisez le lendemain. La formation s'appuie sur vos dossiers, votre méthode, votre style.</p>
-      </div>
-
-      <div class="formation-strip reveal">
-        <div class="formation-cell">
-          <div class="tag">DJ · I — Environnement</div>
-          <h4>Set-up de l'environnement.</h4>
-          <p>Connecteurs (MCP) et premières compétences (skills). Comprendre ce que l'IA peut et ne peut pas faire.</p>
-        </div>
-        <div class="formation-cell">
-          <div class="tag">DJ · II — Prise en main</div>
-          <h4>Recherche sur vos dossiers.</h4>
-          <p>Première prise en main en conditions réelles. Recherche jurisprudentielle en direct : Cour de cassation, Conseil d'État, CEDH, CJUE.</p>
-        </div>
-        <div class="formation-cell">
-          <div class="tag">DJ · III — Rédaction</div>
-          <h4>Rédaction assistée.</h4>
-          <p>Structurer une tâche hautement technique : conclusions, mémoires. Pour ceux qui souhaitent aller plus loin : configuration de VS Code.</p>
-        </div>
-        <div class="formation-cell">
-          <div class="tag">DJ · IV — Personnalisation</div>
-          <h4>Skill sur mesure.</h4>
-          <p>Travail sur un dossier réel du cabinet. Création d'un skill répondant à un besoin spécifique identifié ensemble.</p>
-        </div>
-      </div>
-
-      <div class="formation-meta reveal">
-        <span><span class="label">Format</span> 2 + 2 demi-journées</span>
-        <span><span class="label">Effectif</span> jusqu'à 5 collaborateurs</span>
-        <span><span class="label">Lieu</span> intra-cabinet</span>
-        <span><span class="label">Tarif</span> sur devis</span>
-      </div>
-
-      <div class="formation-cta reveal">
-        <a href="#contact" class="link-underline">Demander une démo →</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
-
-  <!-- ===== IV — SIGNATURE ===== -->
-  <section class="section-pad" id="signature" data-screen-label="Signature">
-    <div class="container">
-      <div class="section-label"><span class="num">IV.</span><span>Signature</span></div>
-
-      <div class="signature-grid">
-        <div class="reveal">
-          <h2>Le droit et la data science, <em>dans la même pièce</em>.</h2>
-          <p style="margin-top:32px;font-size:18px;font-weight:300;line-height:1.55;color:var(--color-text);max-width:420px;">
-            L'un sait comment accéder aux sources de façon optimale. L'autre sait lesquelles interroger, et comment. C'est cette combinaison qui garantit la qualité des connecteurs et des compétences.
-          </p>
-        </div>
-        <div class="reveal">
-          <p>
-            Nomos naît du croisement de deux disciplines.
-          </p>
-          <div class="signature-people">
-            <div class="person">
-              <div class="portrait"><span class="portrait-label">portrait 4:5</span></div>
-              <div class="person-meta">
-                Quentin Corlay
-                <span class="role">Geo data science · Co-fondateur</span>
-              </div>
-              <p style="font-size:14px;font-weight:300;line-height:1.55;color:var(--color-text);margin:0;">Docteur en geo data science (Heriot-Watt University, Édimbourg). Il construit les connecteurs et l'environnement technique.</p>
-            </div>
-            <div class="person">
-              <div class="portrait"><span class="portrait-label">portrait 4:5</span></div>
-              <div class="person-meta">
-                Théophane Corlay
-                <span class="role">Droit privé · Co-fondateur</span>
-              </div>
-              <p style="font-size:14px;font-weight:300;line-height:1.55;color:var(--color-text);margin:0;">Doctorant en droit, Université Paris&nbsp;1 Panthéon-Sorbonne. Il rédige les compétences et les calibre en conditions réelles.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
-
-  <!-- ===== V — FAQ ===== -->
-  <section class="section-pad faq" id="faq" data-screen-label="FAQ">
-    <div class="container">
-      <div class="section-label"><span class="num">V.</span><span>Questions</span></div>
-      <h2 class="reveal">Les questions qu'on nous <em>pose</em>.</h2>
-      <div class="faq-list reveal">
-        <details>
-          <summary>L'IA hallucine : comment vous gérez ça&nbsp;? <span class="icon" aria-hidden="true"></span></summary>
-          <div class="answer"><div class="answer-inner">
-            L'environnement Nomos ne s'appuie pas sur une base vectorielle propriétaire. Chaque requête interroge directement les sources officielles via des connecteurs (Légifrance, Ariane Web, CURIA, HUDOC, BOFiP, etc.). La méthode repose sur une règle structurelle : chercher, trouver, citer. Dans cet ordre. L'IA ne peut pas citer une décision qu'elle n'a pas retrouvée via une requête vérifiable. Chaque requête est affichée avant exécution, chaque résultat journalisé.
-          </div></div>
-        </details>
-        <details>
-          <summary>Mes données client sont-elles protégées&nbsp;? <span class="icon" aria-hidden="true"></span></summary>
-          <div class="answer"><div class="answer-inner">
-            Oui. L'anonymisation est une étape obligatoire du flux de travail, avant tout envoi au modèle. Aucune donnée identifiante ne circule. L'architecture est conforme aux exigences déontologiques.
-          </div></div>
-        </details>
-        <details>
-          <summary>Faut-il être à l'aise avec la technologie&nbsp;? <span class="icon" aria-hidden="true"></span></summary>
-          <div class="answer"><div class="answer-inner">
-            Non. La formation part de zéro sur l'environnement technique. En revanche, elle suppose une pratique juridique solide.
-          </div></div>
-        </details>
-        <details>
-          <summary>Quel modèle d'IA utilisez-vous&nbsp;? <span class="icon" aria-hidden="true"></span></summary>
-          <div class="answer"><div class="answer-inner">
-            Claude pour le moment. Mais l'environnement final est agnostique au modèle : il fonctionne avec les principaux LLMs du marché. Vous pourrez à tout moment choisir ou changer le modèle que vous jugez le plus performant ou le plus éthique.
-          </div></div>
-        </details>
-        <details>
-          <summary>Est-ce que ça remplace un assistant ou un collaborateur&nbsp;? <span class="icon" aria-hidden="true"></span></summary>
-          <div class="answer"><div class="answer-inner">
-            Non. L'IA augmente la capacité de recherche et de structuration de l'avocat, elle ne remplace ni le jugement, ni la responsabilité professionnelle. C'est le principe sur lequel repose toute la méthode.
-          </div></div>
-        </details>
-        <details>
-          <summary>Pourquoi utiliser VS Code plutôt que claude.ai&nbsp;? <span class="icon" aria-hidden="true"></span></summary>
-          <div class="answer"><div class="answer-inner">
-            <p style="margin:0 0 16px;">claude.ai impose le modèle Anthropic. VS Code permet de configurer librement le modèle utilisé : Anthropic, Mistral, Google, Meta, ou tout fournisseur proposant une API compatible. Si un autre modèle s'avère plus performant ou mieux adapté à votre pratique, vous basculez sans perdre vos compétences, vos connecteurs ni vos instructions permanentes. C'est la seule interface qui garantit cette indépendance.</p>
-            <p style="margin:0;">Elle permet également un travail plus fluide avec l'IA, est nettement moins énergivore en termes de tokens et les modèles y sont souvent plus performants.</p>
-          </div></div>
-        </details>
       </div>
     </div>
   </section>
@@ -1311,12 +1279,14 @@
   <!-- ===== VI — CONTACT ===== -->
   <section class="section-pad" id="contact" data-screen-label="Contact">
     <div class="container">
-      <div class="section-label"><span class="num">VI.</span><span>Contact</span></div>
+      <div class="section-label"><span class="num">III.</span><span>Contact</span></div>
 
       <div class="contact-grid">
         <div class="contact-left reveal">
-          <h2>Demander une <em>démo</em>.</h2>
-          <p>Une session de 45&nbsp;minutes sur un dossier réel, sans engagement.</p>
+          <h2>Préparer <em>votre formation.</em></h2>
+          <p>Un échange pour cerner vos besoins et calibrer la formation à votre pratique.</p>
+          <a href="https://calendar.app.google/nek3HFC16WBqmbg98" target="_blank" rel="noopener noreferrer" class="btn btn-primary booking-btn">Réserver un créneau <span class="arrow" aria-hidden="true">→</span></a>
+          <p class="contact-or">ou nous écrire directement</p>
           <div class="contact-meta">
             <div class="row"><span class="label">Email</span><span><a href="mailto:contact@nomos-ai.fr">contact@nomos-ai.fr</a></span></div>
             <div class="row"><span class="label">Tél.</span><span>+33 (0)1 00 00 00 00</span></div>
@@ -1379,11 +1349,9 @@
       </div>
       <div class="footer-col">
         <h5>Produit</h5>
-        <a href="#position">Position</a>
-        <a href="#outils">Outils</a>
-        <a href="#formations">Formation</a>
-        <a href="#faq">FAQ</a>
-      </div>
+        <a href="#methode">Notre Méthode</a>
+        <a href="#outils">Vos nouvelles pratiques</a>
+      </div> 
       <div class="footer-col">
         <h5>Légal</h5>
         <a href="#">Mentions légales</a>
@@ -1402,6 +1370,7 @@
     </div>
   </div>
 </footer>
+
 
 <script>
   // Sticky header
@@ -1464,6 +1433,7 @@
       nav.style.gap = '16px';
     });
   }
+
 </script>
 
 <!--
