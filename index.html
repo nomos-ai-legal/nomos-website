@@ -323,227 +323,6 @@
     margin-bottom:96px;
   }
 
-  /* Hero visual */
-  .hero-visual{
-    display:none;
-  }
-  .hero-proof{
-    margin-top:28px;
-    font-family:var(--font-mono); font-size:11px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--color-text-muted);
-    text-align:center;
-  }
-  .hero-proof span{margin:0 14px}
-  .hero-proof .dot{color:var(--color-rule)}
-
-  /* ===== VS CODE MOCKUP ===== */
-  .mockup{
-    height:100%; width:100%;
-    display:grid; grid-template-columns: 36px 156px 1fr 272px;
-    font-size:12px;
-    color:var(--color-text);
-    background:var(--color-background);
-  }
-
-  /* Activity bar */
-  .mk-vsc-bar{
-    background:var(--color-primary);
-    display:flex; flex-direction:column; align-items:center;
-    padding:10px 0; gap:2px;
-    flex-shrink:0;
-  }
-  .mk-vsc-icon{
-    width:36px; height:36px;
-    display:flex; align-items:center; justify-content:center;
-    color:rgba(245,240,225,.35); font-size:15px; cursor:default;
-  }
-  .mk-vsc-icon.active{
-    color:var(--color-text-on-dark);
-    box-shadow:inset 2px 0 0 var(--color-accent-on-dark);
-  }
-
-  /* File explorer */
-  .mk-side{
-    background:var(--color-surface);
-    border-right:1px solid var(--color-rule);
-    padding:0;
-    display:flex; flex-direction:column;
-    overflow:hidden;
-  }
-  .mk-exp-header{
-    font-family:var(--font-mono); font-size:9.5px;
-    letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--color-text-muted);
-    padding:9px 12px 7px;
-    border-bottom:1px solid var(--color-rule);
-    flex-shrink:0;
-  }
-  .mk-exp-section{
-    font-family:var(--font-mono); font-size:9.5px;
-    letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--color-primary); font-weight:500;
-    padding:8px 10px 4px;
-    display:flex; align-items:center; gap:5px;
-  }
-  .mk-exp-section::before{ content:"▼"; font-size:7px; color:var(--color-text-muted); margin-right:2px }
-  .mk-exp-item{
-    display:flex; align-items:center; gap:6px;
-    padding:3px 10px 3px 22px;
-    font-family:var(--font-mono); font-size:10px;
-    color:var(--color-text);
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    cursor:default;
-  }
-  .mk-exp-item.folder{ padding-left:10px; color:var(--color-text-muted) }
-  .mk-exp-item.folder::before{ content:"▶"; font-size:7px; margin-right:3px }
-  .mk-exp-item.folder.open::before{ content:"▼"; font-size:7px; margin-right:3px }
-  .mk-exp-item.l2{ padding-left:22px }
-  .mk-exp-item.active{ background:rgba(22,58,95,.09); color:var(--color-primary); font-weight:500 }
-  .mk-exp-item .dot{ width:5px; height:5px; border-radius:50%; background:var(--color-accent); flex-shrink:0 }
-
-  /* Editor */
-  .mk-main{
-    display:flex; flex-direction:column; min-width:0;
-    border-right:1px solid var(--color-rule);
-  }
-  .mk-tab-bar{
-    height:34px;
-    border-bottom:1px solid var(--color-rule);
-    display:flex; align-items:stretch;
-    background:var(--color-surface);
-    flex-shrink:0; overflow:hidden;
-  }
-  .mk-tab{
-    display:flex; align-items:center; gap:7px;
-    padding:0 13px;
-    font-family:var(--font-mono); font-size:10px;
-    color:var(--color-text-muted);
-    border-right:1px solid var(--color-rule);
-    cursor:default; white-space:nowrap;
-  }
-  .mk-tab.active{
-    background:var(--color-background);
-    color:var(--color-primary);
-    border-top:2px solid var(--color-accent);
-  }
-  .mk-tab .close{ color:var(--color-rule); font-size:9px }
-  .mk-tab.active .close{ color:var(--color-text-muted) }
-  .mk-editor-body{
-    flex:1; overflow:hidden;
-    padding:10px 0;
-  }
-  .mk-code-line{
-    display:flex; align-items:baseline;
-    line-height:1.72;
-  }
-  .mk-line-num{
-    width:34px; text-align:right; padding-right:14px;
-    font-family:var(--font-mono); font-size:10px;
-    color:var(--color-rule); flex-shrink:0; user-select:none;
-  }
-  .mk-line-content{
-    font-family:var(--font-mono); font-size:10.5px;
-    color:var(--color-text); white-space:pre;
-  }
-  .md-h1{ color:var(--color-primary); font-weight:600 }
-  .md-h2{ color:var(--color-primary) }
-  .md-bold{ color:var(--color-primary); font-weight:500 }
-  .md-muted{ color:var(--color-text-muted); font-style:italic }
-  .md-arrow{ color:var(--color-accent) }
-  .mk-status-bar{
-    height:20px;
-    background:var(--color-primary);
-    display:flex; align-items:center; justify-content:space-between;
-    padding:0 10px;
-    font-family:var(--font-mono); font-size:9px;
-    color:rgba(245,240,225,.55);
-    flex-shrink:0;
-  }
-  .mk-status-bar .st-accent{ color:var(--color-accent-on-dark) }
-
-  /* Claude Code panel */
-  .mk-tools{
-    background:var(--color-surface);
-    display:flex; flex-direction:column;
-    overflow:hidden;
-  }
-  .mk-cc-header{
-    height:34px;
-    border-bottom:1px solid var(--color-rule);
-    display:flex; align-items:center; justify-content:space-between;
-    padding:0 13px;
-    font-family:var(--font-mono); font-size:10px;
-    letter-spacing:0.1em; text-transform:uppercase;
-    flex-shrink:0;
-  }
-  .mk-cc-title{ color:var(--color-primary); font-weight:600 }
-  .mk-cc-model{
-    border:1px solid var(--color-rule); padding:2px 7px;
-    font-size:9px; color:var(--color-text-muted);
-    display:flex; align-items:center; gap:4px;
-  }
-  .mk-cc-model::before{ content:"●"; color:var(--color-accent); font-size:7px }
-  .mk-cc-chat{
-    flex:1; overflow:hidden;
-    padding:12px 13px 8px;
-    display:flex; flex-direction:column; gap:9px;
-  }
-  .mk-cc-msg{ font-size:11px; line-height:1.5 }
-  .mk-cc-msg.user{ color:var(--color-primary); font-weight:500 }
-  .mk-cc-msg.user::before{
-    content:"Vous"; display:block;
-    font-family:var(--font-mono); font-size:9px;
-    letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--color-text-muted); font-weight:400; margin-bottom:2px;
-  }
-  .mk-cc-msg.assist{ color:var(--color-text) }
-  .mk-cc-msg.assist::before{
-    content:"Claude"; display:block;
-    font-family:var(--font-mono); font-size:9px;
-    letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--color-text-muted); font-weight:400; margin-bottom:2px;
-  }
-  .mk-skill-invoke{
-    display:flex; align-items:center; gap:6px;
-    padding:5px 8px;
-    background:var(--color-background);
-    border:1px solid var(--color-rule);
-    font-family:var(--font-mono); font-size:9.5px;
-  }
-  .sk-tag{ color:var(--color-accent); font-weight:500 }
-  .sk-sep{ color:var(--color-rule) }
-  .sk-args{ color:var(--color-text-muted) }
-
-  /* Skills list panel */
-  .mk-skills-panel{
-    border-top:1px solid var(--color-rule);
-    padding:9px 13px 11px;
-    flex-shrink:0;
-  }
-  .mk-skills-title{
-    font-family:var(--font-mono); font-size:9px;
-    letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--color-text-muted);
-    margin-bottom:7px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .mk-skills-badge{
-    background:var(--color-primary); color:var(--color-background);
-    padding:1px 5px; font-size:8px;
-  }
-  .mk-skills-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:3px 4px;
-  }
-  .mk-skill-row{
-    display:flex; align-items:center; gap:5px;
-    font-family:var(--font-mono); font-size:9.5px;
-    color:var(--color-text); padding:2px 0;
-  }
-  .sk-dot{ width:4px; height:4px; border-radius:50%; background:var(--color-accent); flex-shrink:0 }
-  .sk-name{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
-
   /* ===== Position / Manifeste ===== */
   .manifeste-grid{
     display:grid;
@@ -1173,10 +952,6 @@
     .manifeste-quote{ margin-top:64px; padding:24px 0 }
     .footer-grid{ grid-template-columns:1fr 1fr; gap:32px }
     .footer-bottom{ flex-direction:column; gap:12px; align-items:flex-start }
-    .mockup{ grid-template-columns: 1fr }
-    .mk-vsc-bar, .mk-side, .mk-tools{ display:none }
-    .hero-proof span{ display:block; margin:3px 0 }
-    .hero-proof .dot{ display:none }
   }
   @media (max-width:480px){
     :root{ --gutter:20px }
@@ -1230,7 +1005,6 @@
     <nav class="nav" aria-label="Navigation principale">
       <a href="#methode">Notre Méthode</a>
       <a href="#outils">Vos nouvelles pratiques</a>
-      <a href="#contact">Contact</a>
     </nav>
     <div class="header-cta">
       <a href="#contact" class="btn btn-primary">Nous contacter <span class="arrow" aria-hidden="true">→</span></a>
@@ -1250,97 +1024,6 @@
         <span>Le discernement juridique, augmenté</span>
       </p>
       <h1 class="reveal">Vous former pour créer<br/><em>vos outils.</em></h1>
-
-      <div class="hero-visual reveal">
-        <div class="mockup" role="img" aria-label="VS Code avec Claude Code — travail sur dossier juridique avec skills de recherche">
-
-          <!-- Activity bar VS Code -->
-          <aside class="mk-vsc-bar" aria-hidden="true">
-            <div class="mk-vsc-icon active">⊟</div>
-            <div class="mk-vsc-icon">⊞</div>
-            <div class="mk-vsc-icon">⊛</div>
-            <div class="mk-vsc-icon" style="margin-top:auto">⊙</div>
-          </aside>
-
-          <!-- Explorateur de fichiers -->
-          <aside class="mk-side">
-            <div class="mk-exp-header">Explorateur</div>
-            <div class="mk-exp-section">Dossier-Martin</div>
-            <div class="mk-exp-item folder open">01-pieces</div>
-            <div class="mk-exp-item l2">note-huissier.pdf</div>
-            <div class="mk-exp-item l2">factures-2022.pdf</div>
-            <div class="mk-exp-item folder open">02-recherche</div>
-            <div class="mk-exp-item l2 active"><span class="dot"></span>notes-cedh.md</div>
-            <div class="mk-exp-item l2">arrets-cassation.md</div>
-            <div class="mk-exp-item">conclusions-v3.md</div>
-            <div class="mk-exp-item">memoire-amplitatif.md</div>
-          </aside>
-
-          <!-- Éditeur -->
-          <div class="mk-main">
-            <div class="mk-tab-bar">
-              <div class="mk-tab active">notes-cedh.md <span class="close">×</span></div>
-              <div class="mk-tab">memoire-amplitatif.md</div>
-            </div>
-            <div class="mk-editor-body">
-              <div class="mk-code-line"><span class="mk-line-num">1</span><span class="mk-line-content"><span class="md-h1"># Recherche CEDH — Affaire Martin</span></span></div>
-              <div class="mk-code-line"><span class="mk-line-num">2</span><span class="mk-line-content"></span></div>
-              <div class="mk-code-line"><span class="mk-line-num">3</span><span class="mk-line-content"><span class="md-h2">## Arrêts pertinents — Art. 8</span></span></div>
-              <div class="mk-code-line"><span class="mk-line-num">4</span><span class="mk-line-content"></span></div>
-              <div class="mk-code-line"><span class="mk-line-num">5</span><span class="mk-line-content"><span class="md-bold">**CEDH, 4 mai 2000, Rotaru c. Roumanie**</span></span></div>
-              <div class="mk-code-line"><span class="mk-line-num">6</span><span class="mk-line-content"><span class="md-muted">Données personnelles — surveillance étatique</span></span></div>
-              <div class="mk-code-line"><span class="mk-line-num">7</span><span class="mk-line-content"><span class="md-arrow">→</span> Applicable : collecte sans base légale</span></div>
-              <div class="mk-code-line"><span class="mk-line-num">8</span><span class="mk-line-content"></span></div>
-              <div class="mk-code-line"><span class="mk-line-num">9</span><span class="mk-line-content"><span class="md-bold">**CEDH, 13 sept. 2018, Big Brother Watch**</span></span></div>
-              <div class="mk-code-line"><span class="mk-line-num">10</span><span class="mk-line-content"><span class="md-muted">Surveillance de masse — art. 8 + art. 10</span></span></div>
-            </div>
-            <div class="mk-status-bar">
-              <span>notes-cedh.md</span>
-              <span class="st-accent">● claude-sonnet-4-6</span>
-              <span>Ln 7, Col 1</span>
-            </div>
-          </div>
-
-          <!-- Claude Code — chat + skills -->
-          <aside class="mk-tools">
-            <div class="mk-cc-header">
-              <span class="mk-cc-title">Claude Code</span>
-              <span class="mk-cc-model">claude-sonnet-4-6</span>
-            </div>
-            <div class="mk-cc-chat">
-              <div class="mk-cc-msg user">Recherche CEDH sur données personnelles — affaire Martin</div>
-              <div class="mk-skill-invoke">
-                <span class="sk-tag">▶ /recherche-CEDH</span>
-                <span class="sk-sep">·</span>
-                <span class="sk-args">art. 8, données perso</span>
-              </div>
-              <div class="mk-skill-invoke">
-                <span class="sk-tag">⚙ cedh.search_cases</span>
-                <span class="sk-sep">→</span>
-                <span class="sk-args">{ articles: ["8"] }</span>
-              </div>
-              <div class="mk-cc-msg assist">3 arrêts retenus. Rotaru c. Roumanie (2000) directement applicable — violation constatée, absence de base légale suffisante pour la collecte.</div>
-            </div>
-            <div class="mk-skills-panel">
-              <div class="mk-skills-title">
-                <span>Skills juridiques</span>
-                <span class="mk-skills-badge">8 actifs</span>
-              </div>
-              <div class="mk-skills-grid">
-                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-CEDH</span></div>
-                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-Ccass</span></div>
-                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-CE</span></div>
-                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-CJUE</span></div>
-                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-ADLC</span></div>
-                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">recherche-BOFiP</span></div>
-                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">redaction-MA</span></div>
-                <div class="mk-skill-row"><span class="sk-dot"></span><span class="sk-name">anonymisation</span></div>
-              </div>
-            </div>
-          </aside>
-
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1369,7 +1052,7 @@
             <div class="formation-cell">
               <div class="tag">DJ · I — Mise en place</div>
               <h4>Set-up de l'environnement et configuration des skills de recherche.</h4>
-              <p>Solution d'anonymisation en local, connecteurs (MCP) sur des données juridiques publiques et skills de recherche NOMOS : Ccass, CE, CJUE, CEDH, BOFiP et pratique décisionnelle des AAI (commission européenne, AMF, Adlc, ACPR, CNIL).Tests sur des questions juridiques de votre choix.</p>
+              <p>Solution de pseudonymisation en local, connecteurs (MCP) sur des données juridiques publiques et skills de recherche NOMOS : Ccass, CE, CJUE, CEDH, BOFiP et AAI (commission européenne, AMF, Adlc, ACPR, CNIL).Tests sur des questions juridiques de votre choix.</p>
             </div>
             <div class="formation-cell">
               <div class="tag">DJ · II — Prise en main</div>
@@ -1391,7 +1074,7 @@
               <p>Façonner un cadre de travail et des skills propres à la pratique du cabinet. Structurer une tâche hautement technique avec l'IA : conclusions, mémoires, consultations. Pour ceux qui souhaitent aller plus loin : configuration de VS Code.</p>
             </div>
             <div class="formation-cell">
-              <div class="tag">DJ · IV — Accompagnement sur un dossier anonymisé</div>
+              <div class="tag">DJ · IV — Accompagnement sur un dossier pseudonymisé</div>
               <h4>Travail sur un dossier réel du cabinet.</h4>
               <p>A vous de jouer.</p>
             </div>
@@ -1444,7 +1127,7 @@
         <article class="card reveal">
           <div class="card-tag">P · I — Confidentialité</div>
           <h3>Configurer une confidentialité native.</h3>
-          <p>Les données client ne transitent jamais en clair. L'anonymisation est intégrée au flux de travail, avant tout traitement, conformément aux recommandations déontologiques en vigueur.</p>
+          <p>Les données client ne transitent jamais en clair. La pseudonymisation est intégrée au flux de travail, avant tout traitement, conformément aux recommandations déontologiques en vigueur.</p>
         </article>
 
         <article class="card reveal">
@@ -1469,12 +1152,11 @@
   <!-- ===== III — NEWSLETTER ===== -->
   <section class="section-pad" id="newsletter" data-screen-label="Newsletter">
     <div class="container">
-      <div class="section-label"><span class="num">IV.</span><span>La lettre Nomos</span></div>
 
       <div class="newsletter-inner">
         <div class="newsletter-left reveal">
           <h2>La lettre <em>Nomos.</em></h2>
-          <p>Technique juridique et IA. Retours d'expérience sur les outils IA pour juristes : ce qui tient ses promesses, ce qui reste décevant. Parution mensuelle, sans publicité.</p>
+          <p>Le rythme des sorties sur les nouveux outils IA peut être anxiogène. Chaque mois, nous faisons le tri : ce qui mérite votre attention et ce qui ne le mérite pas. Parution mensuelle, sans publicité.</p>
         </div>
 
         <form id="newsletter-form" class="newsletter-form reveal" novalidate>
@@ -1499,7 +1181,6 @@
   <!-- ===== IV — CONTACT ===== -->
   <section class="section-pad" id="contact" data-screen-label="Contact">
     <div class="container">
-      <div class="section-label"><span class="num">V.</span><span>Contact</span></div>
 
       <div class="contact-grid">
         <div class="contact-left reveal">
