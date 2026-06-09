@@ -158,24 +158,38 @@
   section[id]{scroll-margin-top:90px}
   .section-pad{ padding:128px 0 }
 
-  /* Méandre frise (separator) */
+  /* separator — Greek key pattern */
   .meander{
     display:block;
-    height:14px;
+    height:24px;
     width:100%;
-    background-image:
-      linear-gradient(to bottom, transparent calc(50% - 6px), var(--color-accent) calc(50% - 6px), var(--color-accent) calc(50% - 5px), transparent calc(50% - 5px)),
-      linear-gradient(to bottom, transparent calc(50% + 5px), var(--color-accent) calc(50% + 5px), var(--color-accent) calc(50% + 6px), transparent calc(50% + 6px));
-    /* override with svg pattern */
     background:
-      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 14' preserveAspectRatio='none'><path d='M0 12 H8 V4 H24 V12 H32 V4 H48 V12 H56' fill='none' stroke='%236B8A5A' stroke-width='1'/></svg>") repeat-x center / 56px 14px;
-    opacity:.55;
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g fill='none' stroke='%236B8A5A' stroke-width='2.4' stroke-linecap='square' stroke-linejoin='miter'><path d='M 0,21 H 24'/><path d='M 2,21 V 4 H 20 V 17 H 6 V 10 H 14'/></g></svg>") repeat-x center / 24px 24px;
+    opacity:.7;
   }
   .meander-wrap{
     max-width:var(--container);
     margin:0 auto;
     padding:0 var(--gutter);
   }
+
+  /* Colonnes ioniques — décor latéral */
+  .section-columns{ overflow:hidden; }
+  .columns-decor{
+    position:absolute;
+    top:50%;
+    right:0;
+    transform:translateY(-50%);
+    width:min(34vw, 440px);
+    height:auto;
+    opacity:.16;
+    pointer-events:none;
+    z-index:0;
+    -webkit-mask-image:linear-gradient(to right, transparent, #000 38%, #000 100%);
+            mask-image:linear-gradient(to right, transparent, #000 38%, #000 100%);
+  }
+  .section-columns .container{ position:relative; z-index:1; }
+  @media (max-width:900px){ .columns-decor{ display:none } }
 
   .section-label{
     font-family:var(--font-mono);
@@ -1030,7 +1044,8 @@
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
   <!-- ===== I — NOTRE MÉTHODE  4 demi-journées Des outils utilisables le lendemain ===== -->
-  <section class="section-pad" id="methode" data-screen-label="Notre Méthode">
+  <section class="section-pad section-columns" id="methode" data-screen-label="Notre Méthode">
+    <img class="columns-decor" src="asset/greek-collumns-blue.png" alt="" aria-hidden="true" />
     <div class="container">
       <p class="section-lead reveal">Ce que vous construisez pendant la formation, <em>vous l'utilisez le lendemain.</em></p>
       <div class="section-label"><span class="num">I.</span><span>Notre Méthode</span></div>
@@ -1144,8 +1159,6 @@
       </div>
     </div>
   </section>
-
-  <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
