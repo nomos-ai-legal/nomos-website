@@ -173,23 +173,61 @@
     padding:0 var(--gutter);
   }
 
-  /* Colonnes ioniques — décor latéral */
-  .section-columns{ overflow:hidden; }
-  .columns-decor{
-    position:absolute;
-    top:50%;
-    right:0;
-    transform:translateY(-50%);
-    width:min(34vw, 440px);
-    height:auto;
-    opacity:.16;
-    pointer-events:none;
-    z-index:0;
-    -webkit-mask-image:linear-gradient(to right, transparent, #000 38%, #000 100%);
-            mask-image:linear-gradient(to right, transparent, #000 38%, #000 100%);
+  /* Notre Méthode — intro en deux colonnes */
+  .method-intro{
+    display:grid;
+    grid-template-columns: 1.2fr 1.2fr;
+    gap:48px;
+    align-items:center;
+    margin-bottom:104px;
   }
-  .section-columns .container{ position:relative; z-index:1; }
-  @media (max-width:900px){ .columns-decor{ display:none } }
+  .method-intro-text .section-lead{
+    font-size:clamp(24px, 3vw, 36px);
+    line-height:1.28;
+    margin-bottom:44px;
+    max-width:none;
+  }
+  .method-intro-text .convictions-label{ margin-bottom:36px }
+  .convictions-list{ display:flex; flex-direction:column; gap:30px }
+  .convictions-list h2{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(19px, 1.9vw, 23px);
+    line-height:1.28;
+    letter-spacing:-0.005em;
+    margin:0;
+    max-width:560px;
+    color:var(--color-primary);
+    position:relative;
+    padding-left:24px;
+  }
+  .convictions-list h2::before{
+    content:"";
+    position:absolute; left:0; top:.18em; bottom:.18em;
+    width:1px; background:var(--color-accent);
+  }
+  .convictions-list h2 em{ font-style:italic; color:var(--color-accent); font-weight:500 }
+  .method-intro-media{ position:relative }
+  .method-intro-media img{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-right:calc(var(--gutter) * -0.5);
+    width:calc(100% + var(--gutter) * 0.5);
+    mix-blend-mode:multiply;
+    -webkit-mask-image:
+      linear-gradient(to right,  transparent 0, #000 16%, #000 86%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%);
+            mask-image:
+      linear-gradient(to right,  transparent 0, #000 16%, #000 86%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%);
+    -webkit-mask-composite:source-in;
+            mask-composite:intersect;
+  }
+  @media (max-width:900px){
+    .method-intro{ grid-template-columns:1fr; gap:48px; margin-bottom:72px }
+    .method-intro-media{ display:none }
+  }
 
   .section-label{
     font-family:var(--font-mono);
@@ -508,6 +546,25 @@
     border:1px solid var(--color-rule);
     border-left:3px solid var(--color-primary);
     background:var(--color-background);
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:44px;
+    align-items:center;
+  }
+  .vscode-teaser-media{ align-self:stretch; display:flex; align-items:center }
+  .vscode-teaser-media img{
+    display:block;
+    width:clamp(120px, 14vw, 188px);
+    height:auto;
+    mix-blend-mode:multiply;
+    -webkit-mask-image:
+      radial-gradient(80% 70% at 50% 49%, #000 42%, rgba(0,0,0,.5) 70%, transparent 92%);
+            mask-image:
+      radial-gradient(80% 70% at 50% 49%, #000 42%, rgba(0,0,0,.5) 70%, transparent 92%);
+  }
+  @media (max-width:760px){
+    .vscode-teaser{ grid-template-columns:1fr; gap:24px }
+    .vscode-teaser-media{ display:none }
   }
   .vscode-teaser-tag{
     font-family:var(--font-mono); font-size:11px;
@@ -1044,16 +1101,22 @@
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
   <!-- ===== I — NOTRE MÉTHODE  4 demi-journées Des outils utilisables le lendemain ===== -->
-  <section class="section-pad section-columns" id="methode" data-screen-label="Notre Méthode">
-    <img class="columns-decor" src="asset/greek-collumns-blue.png" alt="" aria-hidden="true" />
+  <section class="section-pad" id="methode" data-screen-label="Notre Méthode">
     <div class="container">
-      <p class="section-lead reveal">Ce que vous construisez pendant la formation, <em>vous l'utilisez le lendemain.</em></p>
-      <div class="section-label"><span class="num">I.</span><span>Notre Méthode</span></div>
 
-      <p class="convictions-label reveal">Nos deux convictions :</p>
-      <div class="section-head reveal">
-        <h2>Les meilleurs outils sont ceux <em>que vous aurez vous-même pensés.</em></h2>
-        <h2>Séquences courtes. <em>L'avocat valide, oriente, corrige.</em> Le raisonnement reste entièrement le vôtre.</h2>
+      <div class="method-intro reveal">
+        <div class="method-intro-text">
+          <div class="section-label"><span class="num">I.</span><span>Notre Méthode</span></div>
+          <p class="section-lead">Ce que vous construisez pendant la formation, <em>vous l'utilisez le lendemain.</em></p>
+          <p class="convictions-label">Nos deux convictions :</p>
+          <div class="convictions-list">
+            <h2>Les meilleurs outils sont ceux <em>que vous aurez vous-même pensés.</em></h2>
+            <h2>Séquences courtes. <em>L'avocat valide, oriente, corrige.</em> Le raisonnement reste entièrement le vôtre.</h2>
+          </div>
+        </div>
+        <div class="method-intro-media">
+          <img src="asset/greek-collumns-blue.png" alt="Colonnes ioniques" loading="lazy" />
+        </div>
       </div>
 
       <div class="formation-steps reveal">
@@ -1099,11 +1162,16 @@
       </div>
 
       <div class="vscode-teaser reveal">
+        <div class="vscode-teaser-media">
+          <img src="asset/amphora.png" alt="Amphore — la Justice" loading="lazy" />
+        </div>
+        <div class="vscode-teaser-content">
         <div class="vscode-teaser-tag">Aller plus loin</div>
         <h3 class="vscode-teaser-title">Et si on passait à VS Code ? Notre option qui fait toute la différence.</h3>
         <div class="vscode-teaser-body">
           <p>VS Code est l'environnement du développeur. Notre ambition est qu'il soit aussi le vôtre. Claude.ai impose le modèle Anthropic.  VS Code permet de configurer librement le modèle utilisé : Anthropic, Mistral, Google, Meta, ou tout fournisseur proposant une API compatible. Si un autre modèle s'avère plus performant, mieux adapté à votre pratique ou plus éthique, vous saurez basculer sans perdre votre environnement de travail. C'est la meilleure façon de garantir votre indépendance.</p>
           <p>VS Code permet également un travail plus fluide avec l'IA, est nettement moins énergivore en tokens, et les modèles y sont plus performants. L'interface a quelque chose d'effrayant pour le juriste mais c'est précisément ce sur quoi nous pouvons vous aider.</p>
+        </div>
         </div>
       </div>
 
