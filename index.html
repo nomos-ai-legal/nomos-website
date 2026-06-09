@@ -173,30 +173,30 @@
     padding:0 var(--gutter);
   }
 
-  /* Notre Méthode — intro en deux colonnes */
-  .method-intro{
-    display:grid;
-    grid-template-columns: 1.2fr 1.2fr;
-    gap:48px;
-    align-items:center;
-    margin-bottom:104px;
-  }
-  .method-intro-text .section-lead{
-    font-size:clamp(24px, 3vw, 36px);
-    line-height:1.28;
-    margin-bottom:44px;
+  /* Notre Méthode — intro : lede pleine largeur + split convictions / image */
+  .method-intro{ margin-bottom:104px }
+  .method-intro .section-lead{
+    font-size:clamp(28px, 3.6vw, 44px);
+    line-height:1.2;
+    margin:8px 0 64px;
     max-width:none;
   }
-  .method-intro-text .convictions-label{ margin-bottom:36px }
+  .method-split{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .method-convictions .convictions-label{ margin-bottom:36px }
   .convictions-list{ display:flex; flex-direction:column; gap:30px }
   .convictions-list h2{
     font-family:var(--font-display);
     font-weight:500;
-    font-size:clamp(19px, 1.9vw, 23px);
+    font-size:clamp(20px, 2vw, 25px);
     line-height:1.28;
     letter-spacing:-0.005em;
     margin:0;
-    max-width:560px;
+    max-width:520px;
     color:var(--color-primary);
     position:relative;
     padding-left:24px;
@@ -210,22 +210,23 @@
   .method-intro-media{ position:relative }
   .method-intro-media img{
     display:block;
-    width:100%;
     height:auto;
-    margin-right:calc(var(--gutter) * -0.5);
-    width:calc(100% + var(--gutter) * 0.5);
+    margin-right:calc(var(--gutter) * -1);
+    width:calc(100% + var(--gutter));
     mix-blend-mode:multiply;
     -webkit-mask-image:
-      linear-gradient(to right,  transparent 0, #000 16%, #000 86%, transparent 100%),
-      linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%);
+      linear-gradient(to right,  transparent 0, #000 14%, #000 88%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 12%, #000 82%, transparent 100%);
             mask-image:
-      linear-gradient(to right,  transparent 0, #000 16%, #000 86%, transparent 100%),
-      linear-gradient(to bottom, transparent 0, #000 14%, #000 80%, transparent 100%);
+      linear-gradient(to right,  transparent 0, #000 14%, #000 88%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 12%, #000 82%, transparent 100%);
     -webkit-mask-composite:source-in;
             mask-composite:intersect;
   }
   @media (max-width:900px){
-    .method-intro{ grid-template-columns:1fr; gap:48px; margin-bottom:72px }
+    .method-intro{ margin-bottom:72px }
+    .method-intro .section-lead{ max-width:none }
+    .method-split{ grid-template-columns:1fr; gap:40px }
     .method-intro-media{ display:none }
   }
 
@@ -1105,17 +1106,20 @@
     <div class="container">
 
       <div class="method-intro reveal">
-        <div class="method-intro-text">
-          <div class="section-label"><span class="num">I.</span><span>Notre Méthode</span></div>
-          <p class="section-lead">Ce que vous construisez pendant la formation, <em>vous l'utilisez le lendemain.</em></p>
-          <p class="convictions-label">Nos deux convictions :</p>
-          <div class="convictions-list">
-            <h2>Les meilleurs outils sont ceux <em>que vous aurez vous-même pensés.</em></h2>
-            <h2>Séquences courtes. <em>L'avocat valide, oriente, corrige.</em> Le raisonnement reste entièrement le vôtre.</h2>
+        <div class="section-label"><span class="num">I.</span><span>Notre Méthode</span></div>
+        <p class="section-lead">Ce que vous construisez pendant la formation, <em>vous l'utilisez le lendemain.</em></p>
+
+        <div class="method-split">
+          <div class="method-convictions">
+            <p class="convictions-label">Nos deux convictions :</p>
+            <div class="convictions-list">
+              <h2>Les meilleurs outils sont ceux <em>que vous aurez vous-même pensés.</em></h2>
+              <h2>Séquences courtes. <em>L'avocat valide, oriente, corrige.</em> Le raisonnement reste entièrement le vôtre.</h2>
+            </div>
           </div>
-        </div>
-        <div class="method-intro-media">
-          <img src="asset/greek-collumns-blue.png" alt="Colonnes ioniques" loading="lazy" />
+          <div class="method-intro-media">
+            <img src="asset/greek-collumns-blue.png" alt="Colonnes ioniques" loading="lazy" />
+          </div>
         </div>
       </div>
 
