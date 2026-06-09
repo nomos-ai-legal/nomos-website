@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nomos AI — La délibération juridique, augmentée.</title>
-<meta name="description" content="Nomos AI forme les avocats et juristes à l'intelligence artificielle juridique. Outils MCP souverains, anonymisation RGPD, accès structuré aux bases publiques françaises et européennes. Formation en cabinet, 4 demi-journées." />
+<title>Nomos — La délibération juridique, augmentée.</title>
+<meta name="description" content="Nomos forme les avocats et juristes à l'intelligence artificielle juridique. Outils MCP souverains, anonymisation, RGPD, accès structuré aux bases publiques françaises et européennes. Formation en cabinet, 4 demi-journées." />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#163A5F" />
 <link rel="canonical" href="https://nomos-ai.fr/" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nomos-ai.fr/" />
-<meta property="og:title" content="Nomos AI — La délibération juridique, augmentée." />
-<meta property="og:description" content="Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit. Outils MCP, anonymisation RGPD, accès aux bases publiques françaises et européennes." />
+<meta property="og:title" content="Nomos — La délibération juridique, augmentée." />
+<meta property="og:description" content="Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit. Outils MCP, anonymisation, RGPD, accès aux bases publiques françaises et européennes." />
 <meta property="og:locale" content="fr_FR" />
-<meta property="og:site_name" content="Nomos AI" />
+<meta property="og:site_name" content="Nomos" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Nomos AI — La délibération juridique, augmentée." />
+<meta name="twitter:title" content="Nomos — La délibération juridique, augmentée." />
 <meta name="twitter:description" content="Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit." />
 <link rel="icon" href="logo/nomos-round-light.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Marcellus&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* ===== Nomos AI Palette ===== */
+    /* ===== Nomos Palette ===== */
     --color-primary:        #163A5F;   /* Bleu Égée */
     --color-accent:         #6B8A5A;   /* Olivier */
     --color-background:     #F5F0E1;   /* Marbre */
@@ -171,6 +171,66 @@
     max-width:var(--container);
     margin:0 auto;
     padding:0 var(--gutter);
+  }
+
+  /* ===== Modales légales ===== */
+  .legal-modals{ display:none; }
+  .legal-modals.open{
+    display:block;
+    position:fixed; inset:0; z-index:200;
+  }
+  .legal-overlay{
+    position:absolute; inset:0;
+    background:rgba(22,58,95,.55);
+    backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+  }
+  .legal-dialog{
+    position:relative;
+    max-width:680px;
+    margin:6vh auto;
+    max-height:88vh; overflow-y:auto;
+    background:var(--color-background);
+    border:1px solid var(--color-rule);
+    border-radius:2px;
+    padding:48px 56px;
+    box-shadow:0 24px 60px rgba(22,58,95,.18);
+  }
+  .legal-close{
+    position:absolute; top:18px; right:20px;
+    width:36px; height:36px;
+    font-size:24px; line-height:1;
+    color:var(--color-text-muted);
+    transition:color .16s ease;
+  }
+  .legal-close:hover{ color:var(--color-primary); }
+  .legal-eyebrow{
+    font-family:var(--font-mono); font-size:11px; font-weight:500;
+    text-transform:uppercase; letter-spacing:0.18em;
+    color:var(--color-accent-small);
+  }
+  .legal-dialog h2{
+    font-family:var(--font-display); font-weight:500;
+    font-size:32px; line-height:1.15;
+    color:var(--color-primary);
+    margin:6px 0 20px;
+  }
+  .legal-dialog h3{
+    font-family:var(--font-display); font-weight:500;
+    font-size:20px; color:var(--color-primary);
+    margin:28px 0 8px;
+  }
+  .legal-dialog p{
+    font-size:15px; line-height:1.65;
+    color:var(--color-text); margin:0 0 12px;
+  }
+  .legal-dialog a{ color:var(--color-primary); text-decoration:underline; text-decoration-color:var(--color-accent); text-underline-offset:3px; }
+  .legal-dialog a:hover{ color:var(--color-accent); }
+  .legal-todo{
+    font-family:var(--font-mono); font-size:12px;
+    color:var(--color-text-muted); font-style:normal;
+  }
+  @media (max-width:640px){
+    .legal-dialog{ padding:40px 24px; margin:0; min-height:100vh; max-height:100vh; }
   }
 
   /* Notre Méthode — intro : lede pleine largeur + split convictions / image */
@@ -1044,12 +1104,11 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Nomos AI",
+    "name": "Nomos",
     "url": "https://nomos-ai.fr",
     "description": "Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "12 rue de la Convention",
       "addressLocality": "Paris",
       "postalCode": "75015",
       "addressCountry": "FR"
@@ -1065,12 +1124,12 @@
 </script>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
-<body data-screen-label="Nomos AI">
+<body data-screen-label="Nomos">
 
 
 <header class="header" id="header">
   <div class="header-inner">
-    <a href="#top" class="logo" aria-label="Nomos AI — accueil">
+    <a href="#top" class="logo" aria-label="Nomos — accueil">
       <img src="logo/nomos-square-light.svg" class="mark" alt="" width="28" height="28">
       <span class="wordmark">Nomos&nbsp;AI</span>
     </a>
@@ -1275,7 +1334,6 @@
           <p class="contact-or">ou nous écrire directement</p>
           <div class="contact-meta">
             <div class="row"><span class="label">Email</span><span><a href="mailto:contact@nomos-ai.fr">contact@nomos-ai.fr</a></span></div>
-            <div class="row"><span class="label">Tél.</span><span>+33 (0)1 00 00 00 00</span></div>
             <div class="row"><span class="label">Lieu</span><span>Paris · sur site ou visio</span></div>
           </div>
         </div>
@@ -1306,7 +1364,7 @@
             <button type="submit" class="btn btn-primary">Envoyer <span class="arrow" aria-hidden="true">→</span></button>
           </div>
           <div class="rgpd">
-            En envoyant ce formulaire, vous acceptez d'être recontacté par Nomos&nbsp;AI. Aucun stockage tiers, aucune publicité. Données conservées 12&nbsp;mois.
+            En envoyant ce formulaire, vous acceptez d'être recontacté par Nomos. Aucun stockage tiers, aucune publicité. Données conservées 12&nbsp;mois.
           </div>
           <div class="form-success" id="form-success">
             Merci. Nous revenons vers vous sous 48&nbsp;heures pour caler un créneau.
@@ -1327,11 +1385,6 @@
     <div class="footer-grid">
       <div class="footer-col">
         <h5>Nomos AI · Paris</h5>
-        <p>
-          12 rue de la Convention<br/>
-          75015 Paris<br/>
-          France
-        </p>
       </div>
       <div class="footer-col">
         <h5>Produit</h5>
@@ -1340,14 +1393,14 @@
       </div> 
       <div class="footer-col">
         <h5>Légal</h5>
-        <a href="#">Mentions légales</a>
-        <a href="#">CGV</a>
-        <a href="#">RGPD</a>
+        <a href="#" data-modal="modal-mentions">Mentions légales</a>
+        <a href="#" data-modal="modal-cgv">CGV</a>
+        <a href="#" data-modal="modal-rgpd">RGPD</a>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
         <a href="mailto:contact@nomos-ai.fr">contact@nomos-ai.fr</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn ↗</a>
+        <a href="https://www.linkedin.com/company/nomos-ai-formation/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn ↗</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1357,6 +1410,60 @@
   </div>
 </footer>
 
+<!-- ===== Modales légales ===== -->
+<div class="legal-modals" id="legal-modals">
+  <div class="legal-overlay" data-close></div>
+
+  <article class="legal-dialog" id="modal-mentions" role="dialog" aria-modal="true" aria-labelledby="t-mentions" hidden>
+    <button class="legal-close" data-close aria-label="Fermer">×</button>
+    <span class="legal-eyebrow">Légal</span>
+    <h2 id="t-mentions">Mentions légales</h2>
+    <p>Conformément aux articles 6-III et 19 de la loi n°&nbsp;2004-575 du 21&nbsp;juin 2004 pour la confiance dans l'économie numérique (LCEN), les informations suivantes sont portées à la connaissance des utilisateurs.</p>
+    <h3>Éditeur du site</h3>
+    <p>Nomos AI — société de formation en intelligence artificielle juridique.<br>
+    Forme juridique&nbsp;: <span class="legal-todo">[à compléter]</span><br>
+    Siège social&nbsp;: Paris, France — <span class="legal-todo">[adresse à compléter]</span><br>
+    SIREN / SIRET&nbsp;: <span class="legal-todo">[à compléter]</span><br>
+    Contact&nbsp;: <a href="mailto:contact@nomos-ai.fr">contact@nomos-ai.fr</a><br>
+    Directeur de la publication&nbsp;: <span class="legal-todo">[à compléter]</span></p>
+    <h3>Hébergement</h3>
+    <p>Le site est hébergé par <span class="legal-todo">[hébergeur — nom, adresse, contact]</span>.</p>
+    <h3>Propriété intellectuelle</h3>
+    <p>L'ensemble des contenus présents sur ce site (textes, identité visuelle, logo, typographies appliquées) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable de Nomos AI est interdite.</p>
+  </article>
+
+  <article class="legal-dialog" id="modal-cgv" role="dialog" aria-modal="true" aria-labelledby="t-cgv" hidden>
+    <button class="legal-close" data-close aria-label="Fermer">×</button>
+    <span class="legal-eyebrow">Légal</span>
+    <h2 id="t-cgv">Conditions générales de vente</h2>
+    <p>Les présentes conditions régissent les prestations de formation fournies par Nomos AI à destination des avocats et professionnels du droit.</p>
+    <h3>Objet</h3>
+    <p>Nomos AI propose des formations à l'intelligence artificielle juridique, dispensées en cabinet, sous la forme de quatre demi-journées.</p>
+    <h3>Commande et tarifs</h3>
+    <p>Toute prestation fait l'objet d'un devis ou d'une convention de formation précisant le contenu, la durée et le prix. Les tarifs sont exprimés en euros. La commande est ferme à réception de la convention signée.</p>
+    <h3>Modalités de paiement</h3>
+    <p>Le règlement intervient selon les conditions définies dans la convention de formation. <span class="legal-todo">[délais et modalités à compléter]</span></p>
+    <h3>Annulation et report</h3>
+    <p>Toute demande d'annulation ou de report doit être notifiée par écrit. <span class="legal-todo">[conditions et délais à compléter]</span></p>
+    <h3>Droit applicable</h3>
+    <p>Les présentes conditions sont soumises au droit français. En cas de litige, compétence est attribuée aux tribunaux du ressort du siège de Nomos AI, sous réserve des dispositions d'ordre public.</p>
+  </article>
+
+  <article class="legal-dialog" id="modal-rgpd" role="dialog" aria-modal="true" aria-labelledby="t-rgpd" hidden>
+    <button class="legal-close" data-close aria-label="Fermer">×</button>
+    <span class="legal-eyebrow">Légal</span>
+    <h2 id="t-rgpd">Protection des données — RGPD</h2>
+    <p>Nomos AI traite les données personnelles dans le respect du Règlement (UE) 2016/679 (RGPD) et de la loi Informatique et Libertés. La confidentialité et la souveraineté des données sont au cœur de notre démarche.</p>
+    <h3>Données collectées</h3>
+    <p>Via le formulaire de contact&nbsp;: nom, adresse e-mail et message. Ces données sont utilisées uniquement pour répondre à votre demande et organiser un éventuel rendez-vous.</p>
+    <h3>Finalité et base légale</h3>
+    <p>Le traitement repose sur votre consentement et sur l'intérêt légitime de Nomos AI à répondre à ses prospects et clients. Aucune donnée n'est cédée à des tiers, aucune exploitation publicitaire n'est réalisée.</p>
+    <h3>Durée de conservation</h3>
+    <p>Les données issues du formulaire de contact sont conservées 12&nbsp;mois à compter du dernier échange.</p>
+    <h3>Vos droits</h3>
+    <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour les exercer&nbsp;: <a href="mailto:contact@nomos-ai.fr">contact@nomos-ai.fr</a>. Vous pouvez introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
+  </article>
+</div>
 
 <script>
   // Sticky header
@@ -1419,6 +1526,40 @@
       nav.style.gap = '16px';
     });
   }
+
+  // Modales légales
+  const legalModals = document.getElementById('legal-modals');
+  const dialogs = legalModals.querySelectorAll('.legal-dialog');
+  let lastFocused = null;
+
+  function openModal(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+    lastFocused = document.activeElement;
+    dialogs.forEach(d => { d.hidden = (d !== target); });
+    legalModals.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const closeBtn = target.querySelector('.legal-close');
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeModal() {
+    legalModals.classList.remove('open');
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('[data-modal]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(link.getAttribute('data-modal'));
+    });
+  });
+  legalModals.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', closeModal);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && legalModals.classList.contains('open')) closeModal();
+  });
 
 </script>
 
