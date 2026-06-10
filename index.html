@@ -146,6 +146,7 @@
   .burger span{display:block; width:20px; height:1px; background:var(--color-primary); position:relative}
   .burger span::before,.burger span::after{content:""; position:absolute; left:0; width:20px; height:1px; background:var(--color-primary)}
   .burger span::before{top:-6px} .burger span::after{top:6px}
+  .nav-mobile-cta{ display:none }
 
   /* ===== Layout ===== */
   main{padding-top:80px}
@@ -1083,7 +1084,7 @@
     .burger{ display:flex }
     .section-pad{ padding:80px 0 }
     .hero{ padding:80px 0 56px }
-    h1{ font-size:42px }
+    h1{ font-size:clamp(28px, calc(10px + 4.5vw), 42px) }
     .section-head{ grid-template-columns:1fr; gap:24px; margin-bottom:48px }
     .grid-3{ grid-template-columns:1fr; border-top:1px solid var(--color-rule); gap:0 }
     .card{ border:none; border-bottom:1px solid var(--color-rule); padding:32px 0; min-height:0 }
@@ -1104,11 +1105,14 @@
   @media (max-width:480px){
     :root{ --gutter:20px }
     .section-pad{ padding:64px 0 }
-    h1{ font-size:36px }
     .hero{ padding:60px 0 40px }
     .footer-grid{ grid-template-columns:1fr }
     .section-h2{ font-size:28px; margin-bottom:40px }
     .contact-meta .row{ flex-direction:column; gap:4px }
+    .btn{ white-space:normal }
+  }
+  @media (max-width:375px){
+    :root{ --gutter:16px }
   }
   @media (prefers-reduced-motion: reduce){
     .reveal{ opacity:1; transform:none; transition:none }
@@ -1152,6 +1156,7 @@
     <nav class="nav" aria-label="Navigation principale">
       <a href="#methode">Notre Méthode</a>
       <a href="#outils">Vos nouvelles pratiques</a>
+      <a href="#contact" class="btn btn-primary nav-mobile-cta">Nous contacter <span class="arrow" aria-hidden="true">→</span></a>
     </nav>
     <div class="header-cta">
       <a href="#contact" class="btn btn-primary">Nous contacter <span class="arrow" aria-hidden="true">→</span></a>
@@ -1524,21 +1529,44 @@
   // Burger
   const burger = document.getElementById('burger');
   if (burger) {
+    const nav = document.querySelector('.nav');
+    const mobileCta = nav ? nav.querySelector('.nav-mobile-cta') : null;
+
+    function closeNav() {
+      if (!nav) return;
+      nav.style.display = '';
+      if (mobileCta) mobileCta.style.display = '';
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Ouvrir le menu');
+    }
+
     burger.addEventListener('click', () => {
-      const nav = document.querySelector('.nav');
       if (!nav) return;
       const isOpen = nav.style.display === 'flex';
-      burger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      burger.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
-      nav.style.display = isOpen ? '' : 'flex';
-      nav.style.position = 'absolute';
-      nav.style.top = '64px'; nav.style.left = '0'; nav.style.right = '0';
-      nav.style.flexDirection = 'column';
-      nav.style.background = 'var(--color-background)';
-      nav.style.padding = '24px 40px';
-      nav.style.borderBottom = '1px solid var(--color-rule)';
-      nav.style.gap = '16px';
+      if (isOpen) {
+        closeNav();
+      } else {
+        const headerHeight = document.getElementById('header').offsetHeight;
+        burger.setAttribute('aria-expanded', 'true');
+        burger.setAttribute('aria-label', 'Fermer le menu');
+        nav.style.display = 'flex';
+        nav.style.position = 'absolute';
+        nav.style.top = headerHeight + 'px';
+        nav.style.left = '0'; nav.style.right = '0';
+        nav.style.flexDirection = 'column';
+        nav.style.background = 'var(--color-background)';
+        nav.style.padding = '24px 40px';
+        nav.style.borderBottom = '1px solid var(--color-rule)';
+        nav.style.gap = '16px';
+        if (mobileCta) mobileCta.style.display = 'inline-flex';
+      }
     });
+
+    if (nav) {
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeNav);
+      });
+    }
   }
 
   // Modales légales
