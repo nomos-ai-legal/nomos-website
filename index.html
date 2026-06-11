@@ -1181,18 +1181,22 @@
   @media (max-width:900px){
     .nav, .header-cta{ display:none }
     .burger{ display:flex }
+    .logo .mark{ width:44px; height:44px }
     .section-pad{ padding:80px 0 }
     .hero{ padding:80px 0 56px }
     h1{ font-size:clamp(28px, calc(10px + 4.5vw), 42px) }
+    .hero-sub{ font-size:18px }
+    .hero-cta{ flex-direction:column; align-items:center; gap:12px; margin-bottom:64px }
+    .hero-cta .btn{ width:100%; max-width:320px; justify-content:center }
     .section-head{ grid-template-columns:1fr; gap:24px; margin-bottom:48px }
     .grid-3{ grid-template-columns:1fr; border-top:1px solid var(--color-rule); gap:0 }
     .card{ border:none; border-bottom:1px solid var(--color-rule); padding:32px 0; min-height:0 }
     .card:hover{ transform:none; border-color:transparent; box-shadow:none; border-bottom-color:var(--color-rule) }
     .formation-strip{ grid-template-columns:1fr }
     .formation-group{ margin-bottom:16px }
-    .formation-step-header{ padding:14px 0; flex-wrap:wrap }
+    .formation-step-header{ padding:14px 16px; flex-wrap:wrap }
     .step-hint{ display:none }
-    .formation-cell{ border-right:none; border-bottom:1px solid var(--color-rule); padding:28px 0; min-height:0 }
+    .formation-cell{ border-right:none; border-bottom:1px solid var(--color-rule); padding:24px 16px; min-height:0 }
     .formation-cell:last-child{ border-bottom:none }
     .formation-meta{ grid-template-columns:repeat(2,1fr); gap:28px }
     .signature-grid, .contact-grid{ grid-template-columns:1fr; gap:48px }
@@ -1205,6 +1209,8 @@
     :root{ --gutter:20px }
     .section-pad{ padding:64px 0 }
     .hero{ padding:60px 0 40px }
+    .hero-sub{ font-size:16px }
+    .hero-cta .btn{ max-width:none }
     .footer-grid{ grid-template-columns:1fr }
     .section-h2{ font-size:28px; margin-bottom:40px }
     .contact-meta .row{ flex-direction:column; gap:4px }
@@ -1277,6 +1283,11 @@
       </p>
       <p class="hero-subtitle reveal"><em>Formation IA juridique</em></p>
       <h1 class="reveal">Vous former à maitriser l'IA pour <em>votre pratique</em> et créer <em>vos outils.</em></h1>
+      <p class="hero-sub reveal">Quatre demi-journées. Des outils utilisables le lendemain, adaptés à votre pratique.</p>
+      <div class="hero-cta reveal">
+        <a href="#contact" class="btn btn-primary">Réserver un créneau <span class="arrow" aria-hidden="true">→</span></a>
+        <a href="#methode" class="btn btn-ghost">Découvrir la méthode</a>
+      </div>
     </div>
   </section>
 
@@ -1655,13 +1666,14 @@
         const headerHeight = document.getElementById('header').offsetHeight;
         burger.setAttribute('aria-expanded', 'true');
         burger.setAttribute('aria-label', 'Fermer le menu');
+        const gutter = getComputedStyle(document.documentElement).getPropertyValue('--gutter').trim() || '20px';
         nav.style.display = 'flex';
         nav.style.position = 'absolute';
         nav.style.top = headerHeight + 'px';
         nav.style.left = '0'; nav.style.right = '0';
         nav.style.flexDirection = 'column';
         nav.style.background = 'var(--color-background)';
-        nav.style.padding = '24px 40px';
+        nav.style.padding = '24px ' + gutter;
         nav.style.borderBottom = '1px solid var(--color-rule)';
         nav.style.gap = '16px';
         if (mobileCta) mobileCta.style.display = 'inline-flex';
