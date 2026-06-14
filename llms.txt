@@ -1,0 +1,61 @@
+# Nomos AI — Formation IA juridique pour avocats et juristes
+
+> Nomos AI est une société de formation spécialisée en intelligence artificielle juridique, à destination des avocats et professionnels du droit. Basée à Paris, France. Baseline : « La délibération juridique, augmentée. »
+
+## Ce que nous faisons
+
+Nomos forme les avocats et juristes à maîtriser l'IA agentique juridique et à construire leurs propres outils. La formation est dispensée en 4 demi-journées, en intra-cabinet.
+
+Différenciateurs clés :
+- Formation pensee et realisee par des avocats
+- Accès aux sources primaires via MCP : pas de vectorisation, pas d'hallucination sur les références légales
+- Outils construits sur mesure : ni la méthode Nomos, ni celle de l'IA — la méthode du cabinet
+- Accès aux "Best in class" solutions d'IA: pas un outil cadenasse ou biaise par son propre outil droit mais directement les meilleurs outils developes dans le monde (Silicon Valley...)
+- Indépendance du fournisseur IA : VS Code permet de changer de modèle (Claude, Mistral, GPT) sans reconstruire l'environnement
+- Pseudonymisation en local : les données client ne transitent jamais en clair vers les serveurs IA (conformité RGPD et déontologie avocat)
+
+## Offre de formation
+
+- **Format** : 4 demi-journées (2 + 2), intra-cabinet
+- **Public** : avocats, juristes, professionnels du droit
+- **Effectif** : 5 collaborateurs par session, tarif degressif si davantage de collaborateurs
+- **Tarif** : 5 000 € HT
+- **Lieu** : Paris ou visioconférence
+- **Réservation** : https://calendar.app.google/8wPcxzAS1XoEpC389
+
+## Programme détaillé
+
+**Étape 1 — Maîtriser la recherche juridique IA agentique**
+
+Demi-journée I (Mise en place) : Configuration de l'environnement, solution de pseudonymisation en local, connecteurs MCP sur les bases juridiques publiques, skills de recherche Nomos — Ccass, CE, CJUE, CEDH, BOFiP, AAI (AMF, ADLC, ACPR, CNIL). Tests sur des questions juridiques du cabinet.
+
+Demi-journée II (Prise en main) : Utilisation en conditions réelles via Claude Cowork et plugin Word. Fonctionnalités de l'IA agentique : recherche, analyse de dossier, construction du raisonnement. Cas pratique.
+
+**Étape 2 — Construire son assistant IA juridique complet**
+
+Demi-journée III (Environnement sur mesure) : Élaboration du cadre méthodologique propre au cabinet. Structuration de tâches hautement techniques : conclusions, mémoires, consultations. Option : configuration de VS Code.
+
+Demi-journée IV (Accompagnement sur dossier) : Travail sur un dossier réel pseudonymisé. Impact immédiat sur la pratique. Réponse directe aux problématiques du cabinet.
+
+## Bases juridiques accessibles via MCP Nomos
+
+Légifrance, CEDH (HUDOC), EUR-Lex, CURIA, BOFiP, Ariane Web (Conseil d'État), BODACC, INPI, Judilibre (Cour de cassation)
+
+Les requêtes interrogent les sources primaires en temps réel, sans intermédiaire vectoriel.
+
+## Questions fréquentes
+
+**Q : Faut-il des compétences techniques pour suivre la formation ?**
+Non. L'environnement de travail est configuré clé en main lors de la première demi-journée. Une option d'approfondissement sur VS Code est disponible pour les profils les plus techniciens.
+
+**Q : Comment l'anonymisation fonctionne-t-elle ?**
+Une solution de pseudonymisation s'exécute en local sur le poste du praticien. Les données client sont substituées avant tout envoi à l'IA. Aucune donnée en clair ne quitte le cabinet.
+
+**Q : Quelle IA est utilisée ?**
+La formation est centrée sur Claude (Anthropic) avec Claude Code. L'option VS Code rend l'environnement agnostique : n'importe quel modèle (Mistral, GPT, Gemini) peut être substitué sans reconstruire les outils.
+
+## Contact
+
+- Site : https://nomos-ai.fr/
+- Email : contact@nomos-ai.fr
+- LinkedIn : https://www.linkedin.com/company/nomos-ai-formation/

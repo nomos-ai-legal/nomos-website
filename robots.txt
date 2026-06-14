@@ -1,4 +1,26 @@
 User-agent: *
 Allow: /
 
+# AI crawlers — explicitly allowed for generative search indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleExtendedBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
 Sitemap: https://nomos-ai.fr/sitemap.xml

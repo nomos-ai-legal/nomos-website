@@ -26,8 +26,8 @@
 <meta property="og:description" content="Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit. Outils MCP, anonymisation, RGPD, accès aux bases publiques françaises et européennes." />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:site_name" content="Nomos" />
-<meta property="og:image" content="https://nomos-ai.fr/asset/greek-collumns-large-blue.png" />
-<meta property="og:image:secure_url" content="https://nomos-ai.fr/asset/greek-collumns-large-blue.png" />
+<meta property="og:image" content="https://nomos-ai.fr/asset/greek-collumns-blue.png" />
+<meta property="og:image:secure_url" content="https://nomos-ai.fr/asset/greek-collumns-blue.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -38,7 +38,7 @@
 <meta name="twitter:url" content="https://nomos-ai.fr/" />
 <meta name="twitter:title" content="Nomos AI — Formation IA juridique pour avocats." />
 <meta name="twitter:description" content="Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit." />
-<meta name="twitter:image" content="https://nomos-ai.fr/asset/greek-collumns-large-blue.png" />
+<meta name="twitter:image" content="https://nomos-ai.fr/asset/greek-collumns-blue.png" />
 <meta name="twitter:image:alt" content="Nomos AI — formation à l'intelligence artificielle juridique" />
 
 <!-- Icons -->
@@ -58,11 +58,14 @@
       "alternateName": "Nomos",
       "url": "https://nomos-ai.fr/",
       "logo": "https://nomos-ai.fr/logo/nomos-square-light.svg",
-      "image": "https://nomos-ai.fr/asset/greek-collumns-large-blue.png",
-      "description": "Société de formation en intelligence artificielle juridique à destination des avocats et professionnels du droit.",
+      "image": "https://nomos-ai.fr/asset/greek-collumns-blue.png",
+      "description": "Société de formation en intelligence artificielle juridique à destination des avocats et professionnels du droit. Basée à Paris, France.",
       "email": "contact@nomos-ai.fr",
       "slogan": "La délibération juridique, augmentée.",
       "areaServed": "FR",
+      "sameAs": [
+        "https://www.linkedin.com/company/nomos-ai-formation/"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Paris",
@@ -85,24 +88,104 @@
       "publisher": { "@id": "https://nomos-ai.fr/#organization" }
     },
     {
+      "@type": "WebPage",
+      "@id": "https://nomos-ai.fr/#webpage",
+      "url": "https://nomos-ai.fr/",
+      "name": "Nomos AI — Formation IA juridique pour avocats et juristes",
+      "description": "Formation à l'intelligence artificielle juridique pour avocats et professionnels du droit. Outils MCP, anonymisation RGPD, accès aux bases juridiques françaises et européennes.",
+      "inLanguage": "fr-FR",
+      "isPartOf": { "@id": "https://nomos-ai.fr/#website" },
+      "about": { "@id": "https://nomos-ai.fr/#organization" },
+      "dateModified": "2026-06-10"
+    },
+    {
       "@type": "Course",
+      "@id": "https://nomos-ai.fr/#course",
       "name": "Formation à l'intelligence artificielle juridique",
-      "description": "Formation pour avocats et juristes : créer ses propres outils d'IA juridique, anonymisation conforme au RGPD, accès structuré aux bases publiques françaises et européennes. Quatre demi-journées en cabinet.",
+      "description": "Formation pour avocats et juristes : créer ses propres outils d'IA juridique, anonymisation conforme au RGPD, accès structuré aux bases publiques françaises et européennes. Quatre demi-journées en intra-cabinet, jusqu'à 5 collaborateurs.",
+      "url": "https://nomos-ai.fr/",
       "inLanguage": "fr-FR",
       "provider": { "@id": "https://nomos-ai.fr/#organization" },
+      "courseWorkload": "PT12H",
+      "teaches": [
+        "IA agentique juridique",
+        "Pseudonymisation et anonymisation RGPD en local",
+        "Recherche juridique via MCP : Légifrance, CEDH, EUR-Lex, BOFiP, Judilibre",
+        "Configuration d'outils IA en cabinet d'avocats",
+        "Rédaction assistée par IA : conclusions, mémoires, consultations",
+        "VS Code et choix souverain du modèle d'IA"
+      ],
       "audience": {
         "@type": "EducationalAudience",
         "audienceType": "Avocats et professionnels du droit"
       },
+      "offers": {
+        "@type": "Offer",
+        "price": "5000",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://nomos-ai.fr/#contact"
+      },
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": ["onsite", "online"],
-        "courseWorkload": "PT4H",
+        "courseWorkload": "PT12H",
+        "maximumAttendeeCapacity": 5,
         "location": {
           "@type": "Place",
-          "address": { "@type": "PostalAddress", "addressCountry": "FR" }
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Paris",
+            "addressCountry": "FR"
+          }
         }
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://nomos-ai.fr/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que Nomos AI ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nomos AI est une société de formation spécialisée en intelligence artificielle juridique, à destination des avocats et professionnels du droit. Elle propose une formation en 4 demi-journées dispensée en intra-cabinet, permettant de maîtriser l'IA agentique juridique, l'anonymisation conforme au RGPD et l'accès structuré aux bases de données juridiques publiques françaises et européennes (Légifrance, CEDH, EUR-Lex, BOFiP, Ariane Web, Judilibre)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la durée et le tarif de la formation IA pour avocats ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La formation Nomos se déroule sur 4 demi-journées (2 + 2), en intra-cabinet. Le tarif est de 5 000 € HT pour un groupe de 1 à 5 collaborateurs puis degressif selon le nombre de participants. La formation peut se tenir à Paris ou en visioconférence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment garantir la confidentialité des données client lors de l'utilisation de l'IA en cabinet ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La formation Nomos intègre une solution de pseudonymisation en local : les données client sont anonymisées avant tout traitement par l'IA. Aucune donnée en clair ne transite vers les serveurs des fournisseurs d'IA. Cette approche est conforme aux recommandations déontologiques du barreau et aux exigences du RGPD."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "À quelles bases de données juridiques l'IA peut-elle accéder après la formation Nomos ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Après la formation Nomos, l'IA peut interroger en temps réel les principales bases publiques françaises et européennes : Légifrance, CEDH (HUDOC), EUR-Lex, CURIA, BOFiP, Ariane Web (Conseil d'État), BODACC, INPI et Judilibre (Cour de cassation). Les requêtes interrogent les sources primaires directement, sans intermédiaire vectoriel, ce qui élimine les risques d'hallucination sur les références légales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il des compétences techniques pour suivre la formation IA Nomos ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. La formation Nomos est conçue pour des avocats et juristes sans formation informatique préalable. L'environnement de travail est configuré clé en main lors de la première demi-journée. Pour ceux qui souhaitent aller plus loin, une option d'approfondissement sur VS Code et le choix libre du modèle d'IA est disponible."
+          }
+        }
+      ]
     }
   ]
 }
@@ -1365,7 +1448,7 @@
         <div class="vscode-teaser-media">
           <picture>
             <source srcset="asset/pericles-bust.webp" type="image/webp" />
-            <img src="asset/pericles-bust.png" alt="Amphore — la Justice" loading="lazy" width="500" height="750" />
+            <img src="asset/pericles-bust.png" alt="Buste de Périclès — symbole du discernement juridique" loading="lazy" width="500" height="750" />
           </picture>
         </div>
         <div class="vscode-teaser-content">
@@ -1434,7 +1517,69 @@
 
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
-  <!-- ===== III — NEWSLETTER ===== -->
+  <!-- ===== III — FAQ ===== -->
+  <section class="section-pad faq" id="faq" data-screen-label="FAQ">
+    <div class="container">
+      <h2>Questions <em>fréquentes.</em></h2>
+      <div class="faq-list">
+
+        <details>
+          <summary>
+            Qu'est-ce que Nomos AI ?
+            <span class="icon" aria-hidden="true"></span>
+          </summary>
+          <div class="answer"><div class="answer-inner">
+            <p>Nomos AI est une société de formation spécialisée en intelligence artificielle juridique, à destination des avocats et professionnels du droit. Nomos propose une formation en 4 demi-journées dispensée en intra-cabinet, permettant de maîtriser l'IA agentique juridique, l'anonymisation conforme au RGPD et l'accès structuré aux bases de données juridiques publiques françaises et européennes (Légifrance, CEDH, EUR-Lex, BOFiP, Ariane Web, Judilibre).</p>
+          </div></div>
+        </details>
+
+        <details>
+          <summary>
+            Quelle est la durée et le tarif de la formation ?
+            <span class="icon" aria-hidden="true"></span>
+          </summary>
+          <div class="answer"><div class="answer-inner">
+            <p>La formation se déroule sur 4 demi-journées (2 + 2), en intra-cabinet. Le tarif est de 5 000 € HT pour un groupe de 1 à 5 collaborateurs puis degressif selon le nombre de participants. La formation peut se tenir à Paris ou en visioconférence.</p>
+          </div></div>
+        </details>
+
+        <details>
+          <summary>
+            Comment garantir la confidentialité des données client avec l'IA ?
+            <span class="icon" aria-hidden="true"></span>
+          </summary>
+          <div class="answer"><div class="answer-inner">
+            <p>La formation intègre une solution de pseudonymisation en local : les données client sont anonymisées avant tout traitement par l'IA. Aucune donnée en clair ne transite vers les serveurs des fournisseurs d'IA. Cette approche est conforme aux recommandations déontologiques du barreau et aux exigences du RGPD.</p>
+          </div></div>
+        </details>
+
+        <details>
+          <summary>
+            À quelles bases juridiques l'IA peut-elle accéder ?
+            <span class="icon" aria-hidden="true"></span>
+          </summary>
+          <div class="answer"><div class="answer-inner">
+            <p>Légifrance, CEDH (HUDOC), EUR-Lex, CURIA, BOFiP, Ariane Web (Conseil d'État), BODACC, INPI, Judilibre (Cour de cassation) : les bases publiques officielles, interrogées en temps réel. Les requêtes interrogent les sources primaires directement, sans intermédiaire vectoriel — ce qui élimine les risques d'hallucination sur les références légales.</p>
+          </div></div>
+        </details>
+
+        <details>
+          <summary>
+            Faut-il des compétences techniques pour suivre la formation ?
+            <span class="icon" aria-hidden="true"></span>
+          </summary>
+          <div class="answer"><div class="answer-inner">
+            <p>Non. La formation est conçue pour des avocats et juristes sans formation informatique préalable. L'environnement de travail est configuré clé en main lors de la première demi-journée. Pour ceux qui souhaitent aller plus loin, une option d'approfondissement sur VS Code et le choix libre du modèle d'IA est disponible.</p>
+          </div></div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
+
+  <!-- ===== IV — NEWSLETTER ===== -->
   <section class="section-pad" id="newsletter" data-screen-label="Newsletter">
     <div class="container">
 
@@ -1463,7 +1608,7 @@
     </div>
   </section>
 
-  <!-- ===== IV — CONTACT ===== -->
+  <!-- ===== V — CONTACT ===== -->
   <section class="section-pad" id="contact" data-screen-label="Contact">
     <div class="container">
 
