@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nomos — La délibération juridique, augmentée.</title>
-<meta name="description" content="Nomos accompagne les avocats et juristes dans la maîtrise de l'intelligence artificielle juridique. Outils MCP souverains, pseudomysation, RGPD, accès structuré aux bases publiques françaises et européennes. Accompagnement en cabinet, 20 heures." />
+<meta name="description" content="Nomos accompagne les avocats et juristes dans la maîtrise de l'intelligence artificielle juridique. Outils MCP souverains, pseudomysation, RGPD, accès structuré aux bases publiques françaises et européennes. Accompagnement en cabinet, 12 heures." />
 <meta name="keywords" content="accompagnement IA juridique, accompagnement IA avocat, intelligence artificielle avocat, IA droit, accompagnement avocat IA, legaltech, MCP juridique, pseudomysation, RGPD, accompagnement juriste, IA cabinet d'avocats, droit et intelligence artificielle, IA agentique, Claude légal, Claude juridique, Nomos IA, avocat aux conseils IA, IA recherche juridique, skill avocat, skill droit, formation IA avocat, IA légal, legal AI, legal tech, Nomos IA" />
 <meta name="author" content="Nomos AI" />
 <meta name="publisher" content="Nomos AI" />
@@ -102,7 +102,7 @@
       "@type": "Course",
       "@id": "https://nomos-ai.fr/#course",
       "name": "Accompagnement à l'intelligence artificielle juridique",
-      "description": "Accompagnement pour avocats et juristes : créer ses propres outils d'IA juridique, anonymisation conforme au RGPD, accès structuré aux bases publiques françaises et européennes. Vingt heures d'accompagnement en intra-cabinet, jusqu'à 5 collaborateurs.",
+      "description": "Accompagnement pour avocats et juristes : créer ses propres outils d'IA juridique, anonymisation conforme au RGPD, accès structuré aux bases publiques françaises et européennes. Douze heures d'accompagnement personnalisé, jusqu'à 5 collaborateurs.",
       "url": "https://nomos-ai.fr/",
       "inLanguage": "fr-FR",
       "provider": { "@id": "https://nomos-ai.fr/#organization" },
@@ -150,7 +150,7 @@
           "name": "Qu'est-ce que Nomos AI ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nomos AI est une société d'accompagnement à l'intelligence artificielle juridique, pensée et construite par des professionnels du droit et des experts en IA. Nous vous aidons à mettre en place au sein de votre cabinet les meilleurs outils et pratiques de l'IA, adaptés aux exigences du métier d'avocat. L'accompagnement se déroule sur 20 heures, en intra-cabinet ou en distanciel, et couvre trois domaines : la maîtrise de l'IA agentique juridique, l'accès structuré aux bases de données légales publiques françaises et européennes (Légifrance, CEDH, Ariane Web, Judilibre), et la pratique de l'IA dans le respect strict de la confidentialité des données client."
+            "text": "Nomos AI est une société d'accompagnement à l'intelligence artificielle juridique, pensée et construite par des professionnels du droit et des experts en IA. Nous vous aidons à mettre en place au sein de votre cabinet les meilleurs outils et pratiques de l'IA, adaptés aux exigences du métier d'avocat. L'accompagnement se déroule sur 12 heures, à des horraires flexibles, et couvre trois domaines : la maîtrise de l'IA agentique juridique, l'accès structuré aux bases de données légales publiques françaises et européennes (Légifrance, CEDH, Ariane Web, Judilibre), et la pratique de l'IA dans le respect strict de la confidentialité des données client."
           }
         },
         {
@@ -158,7 +158,7 @@
           "name": "Quelle est la durée et le tarif de l'accompagnement IA pour avocats ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Le tarif est de 5 000 € HT pour un accompagnement avec un forfait de 20 heures, en intra-cabinet à Paris ou en distanciel. Il comprend la mise à disposition et l'installation des outils qui équipent votre IA pour la pratique juridique : solution de pseudonymisation en local, connecteurs (MCP) vers les bases publiques françaises et européennes, et skills de recherche Nomos."
+            "text": "Le tarif est de 5 000 € HT pour un accompagnement avec un forfait de 12 heures, à des horraires flexibles. Il comprend la mise à disposition et l'installation des outils qui équipent votre IA pour la pratique juridique : solution de pseudonymisation en local, connecteurs (MCP) vers les bases publiques françaises et européennes, et skills de recherche Nomos."
           }
         },
         {
@@ -772,23 +772,22 @@
     margin:0;
   }
   .formation-meta{
-    margin-top:64px;
+    margin-top:56px;
     padding-top:32px;
     border-top:1px solid var(--color-rule);
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
   }
   .formation-meta-item{
-    flex:1 1 auto;
     min-width:0;
     display:flex;
     flex-direction:column;
     gap:10px;
-    padding:0 clamp(24px, 3vw, 48px);
+    padding:0 clamp(18px, 2.2vw, 36px);
     border-left:1px solid var(--color-rule);
   }
   .formation-meta-item:first-child{ padding-left:0; border-left:none }
-  .formation-meta-item:last-child{ padding-right:0; align-items:flex-end; text-align:right }
+  .formation-meta-item:last-child{ padding-right:0 }
   .formation-meta .label{
     font-family:var(--font-mono); font-size:11px;
     letter-spacing:0.18em; text-transform:uppercase;
@@ -796,11 +795,26 @@
   }
   .formation-meta .value{
     font-family:var(--font-display);
-    font-size:clamp(22px, 2.4vw, 28px);
+    font-size:clamp(19px, 1.9vw, 24px);
     font-weight:500;
-    line-height:1.15;
+    line-height:1.2;
+    text-wrap:balance;
     letter-spacing:-0.005em;
     color:var(--color-primary);
+  }
+  .formation-meta .value--price{
+    font-size:clamp(26px, 2.8vw, 34px);
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+  .formation-meta .value--price .unit{
+    font-family:var(--font-mono);
+    font-size:11px;
+    font-weight:400;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--color-text-muted);
   }
   .formation-cta{ margin-top:36px }
 
@@ -1286,10 +1300,12 @@
     .step-hint{ display:none }
     .formation-cell{ border-right:none; border-bottom:1px solid var(--color-rule); padding:24px 16px; min-height:0 }
     .formation-cell:last-child{ border-bottom:none }
-    .formation-meta{ flex-direction:column; margin-top:48px }
-    .formation-meta-item{ padding:20px 0; border-left:none; border-top:1px solid var(--color-rule) }
-    .formation-meta-item:first-child{ padding-top:0; border-top:none }
-    .formation-meta-item:last-child{ padding-bottom:0; align-items:flex-start; text-align:left }
+    .formation-meta{ grid-template-columns:1fr 1fr; margin-top:48px }
+    .formation-meta-item{ padding:24px clamp(20px, 3vw, 32px) }
+    .formation-meta-item:nth-child(odd){ padding-left:0; border-left:none }
+    .formation-meta-item:nth-child(even){ padding-right:0; border-left:1px solid var(--color-rule) }
+    .formation-meta-item:nth-child(-n+2){ padding-top:0 }
+    .formation-meta-item:nth-child(n+3){ border-top:1px solid var(--color-rule) }
     .signature-grid, .contact-grid{ grid-template-columns:1fr; gap:48px }
     .manifeste-grid{ grid-template-columns:1fr; gap:40px }
     .manifeste-quote{ margin-top:64px; padding:24px 0 }
@@ -1305,6 +1321,12 @@
     .footer-grid{ grid-template-columns:1fr }
     .section-h2{ font-size:28px; margin-bottom:40px }
     .contact-meta .row{ flex-direction:column; gap:4px }
+    .formation-meta{ grid-template-columns:1fr }
+    .formation-meta-item{ padding:20px 0; border-left:none }
+    .formation-meta-item:nth-child(even){ padding-right:0; border-left:none }
+    .formation-meta-item:nth-child(-n+2){ padding-top:20px }
+    .formation-meta-item:first-child{ padding-top:0 }
+    .formation-meta-item:nth-child(n+2){ border-top:1px solid var(--color-rule) }
     .btn{ white-space:normal }
   }
   @media (max-width:375px){
@@ -1352,7 +1374,8 @@
     </a>
     <nav class="nav" aria-label="Navigation principale">
       <a href="#methode">Notre Méthode</a>
-      <a href="#outils">Vos nouvelles pratiques</a>
+      <a href="#offre">Notre Offre</a>
+      <a href="#outils">Vos Nouvelles Pratiques</a>
       <a href="#contact" class="btn btn-primary nav-mobile-cta">Nous contacter <span class="arrow" aria-hidden="true">→</span></a>
     </nav>
     <div class="header-cta">
@@ -1373,8 +1396,8 @@
         <span>Le discernement juridique augmenté</span>
       </p>
       <p class="hero-subtitle reveal"><em>Accompagnement IA juridique</em></p>
-      <h1 class="reveal">Maîtriser l'IA dans <em>votre pratique</em> et créer <em>vos outils.</em></h1>
-      <p class="hero-sub reveal">Un accompagnement et des outils adaptés à votre pratique.</p>
+      <h1 class="reveal">Maîtriser l'IA pour <em>votre pratique juridique</em></h1>
+      <p class="hero-sub reveal">Équiper les meilleurs modèles IA généralistes des outils juridiques.</p>
       <div class="hero-cta reveal">
         <a href="#contact" class="btn btn-primary">Réserver un créneau <span class="arrow" aria-hidden="true">→</span></a>
         <a href="#methode" class="btn btn-ghost">Découvrir la méthode</a>
@@ -1384,7 +1407,7 @@
 
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
-  <!-- ===== I — NOTRE MÉTHODE  20 heures d'accompagnement, des outils utilisables le lendemain ===== -->
+  <!-- ===== I — NOTRE MÉTHODE  12 heures d'accompagnement, des outils utilisables le lendemain ===== -->
   <section class="section-pad" id="methode" data-screen-label="Notre Méthode">
     <div class="container">
 
@@ -1470,34 +1493,49 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
+
+  <!-- ===== II — NOTRE OFFRE ===== -->
+  <section class="section-pad" id="offre" data-screen-label="Notre Offre">
+    <div class="container">
+      <div class="section-label"><span class="num">II.</span><span>Notre Offre</span></div>
+
+      <h2 class="section-h2 section-h2--wide reveal">Un forfait <em>tout compris.</em></h2>
+
       <div class="formation-meta reveal">
         <div class="formation-meta-item">
-          <span class="label">Format</span>
-          <span class="value">Forfait 20 heures d'accompagnement</span>
+          <span class="label">Tarif</span>
+          <span class="value value--price">5 000 €<span class="unit">HT</span></span>
+        </div>
+        <div class="formation-meta-item">
+          <span class="label">Outils et accompagnement</span>
+          <span class="value">Outils installés et configurés</span>
+        </div>
+        <div class="formation-meta-item">
+          <span class="label">Format accompagnement</span>
+          <span class="value">12 heures personnalisées</span>
         </div>
         <!-- <div class="formation-meta-item">
           <span class="label">Effectif</span>
           <span class="value">Jusqu'à 5 collaborateurs</span>
         </div> -->
         <div class="formation-meta-item">
-          <span class="label">Lieu</span>
-          <span class="value">Intra-cabinet ou en distenciel</span>
-        </div>
-        <div class="formation-meta-item">
-          <span class="label">Tarif</span>
-          <span class="value">5 000 €</span>
+          <span class="label">À distance</span>
+          <span class="value">Horaires flexibles, en soirées comprises</span>
         </div>
       </div>
-
     </div>
   </section>
 
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
-<!-- ===== II — OUTILS ===== -->
+  <!-- ===== III — OUTILS ===== -->
   <section class="section-pad" id="outils" data-screen-label="Vos nouvelles pratiques">
     <div class="container">
-      <div class="section-label"><span class="num">II.</span><span>Vos nouvelles pratiques</span></div>
+      <div class="section-label"><span class="num">III.</span><span>Vos nouvelles pratiques</span></div>
 
       <h2 class="section-h2 section-h2--wide reveal">Trois pratiques fondamentales <em>à acquérir</em>.</h2>
 
@@ -1525,7 +1563,7 @@
 
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
-  <!-- ===== III — FAQ ===== -->
+  <!-- ===== IV — FAQ ===== -->
   <section class="section-pad faq" id="faq" data-screen-label="FAQ">
     <div class="container">
       <h2>Questions <em>fréquentes.</em></h2>
@@ -1538,7 +1576,7 @@
           </summary>
           <div class="answer"><div class="answer-inner">
             <p>Nomos est une société d'accompagnement à l'intelligence artificielle juridique, pensée et construite par des professionnels du droit et des experts en IA. Nous vous aidons à mettre en place au sein de votre cabinet les meilleurs outils et pratiques de l'IA, adaptés aux exigences du métier d'avocat.</p>
-            <p>L'accompagnement se déroule en intra-cabinet ou en distanciel, et couvre trois domaines : la maîtrise de l'IA agentique juridique, l'accès structuré aux bases de données légales publiques françaises et européennes (Légifrance, CURIA, HUDOC, Ariane Web, l'INPI, Judilibre…), et la pratique de l'IA dans le respect strict de la confidentialité des données client.</p>
+            <p>L'accompagnement se déroule en distanciel à des horraires flexibles, et couvre trois domaines : la maîtrise de l'IA agentique juridique, l'accès structuré aux bases de données légales publiques françaises et européennes (Légifrance, CURIA, HUDOC, Ariane Web, l'INPI, Judilibre…), et la pratique de l'IA dans le respect strict de la confidentialité des données client.</p>
           </div></div>
         </details>
 
@@ -1559,7 +1597,7 @@
             <span class="icon" aria-hidden="true"></span>
           </summary>
           <div class="answer"><div class="answer-inner">
-            <p>Le tarif est de 5 000 € HT pour un accompagnement avec un forfait de 20 heures, en intra-cabinet à Paris ou en distanciel.</p>
+            <p>Le tarif est de 5 000 € HT pour un accompagnement avec un forfait de 12 heures, en distanciel à des horraires flexibles.</p>
             <p>Il comprend la mise à disposition et l'installation des outils qui équipent votre IA pour la pratique juridique : connecteurs (MCP) vers les bases publiques françaises et européennes, skills de recherche Nomos et solution d'aide pseudonymisation.</p>
           </div></div>
         </details>
@@ -1602,7 +1640,7 @@
 
   <div class="meander-wrap"><div class="meander" aria-hidden="true"></div></div>
 
-  <!-- ===== IV — NEWSLETTER ===== -->
+  <!-- ===== V — NEWSLETTER ===== -->
   <section class="section-pad" id="newsletter" data-screen-label="Newsletter">
     <div class="container">
 
@@ -1631,7 +1669,7 @@
     </div>
   </section>
 
-  <!-- ===== V — CONTACT ===== -->
+  <!-- ===== VI — CONTACT ===== -->
   <section class="section-pad" id="contact" data-screen-label="Contact">
     <div class="container">
 
@@ -1643,7 +1681,6 @@
           <p class="contact-or">ou nous écrire directement</p>
           <div class="contact-meta">
             <div class="row"><span class="label">Email</span><span><a href="mailto:contact@nomos-ai.fr">contact@nomos-ai.fr</a></span></div>
-            <div class="row"><span class="label">Lieu</span><span>Paris · sur site ou visio</span></div>
           </div>
         </div>
 
@@ -1698,6 +1735,7 @@
       <div class="footer-col">
         <h5>Produit</h5>
         <a href="#methode">Notre Méthode</a>
+        <a href="#offre">Notre Offre</a>
         <a href="#outils">Vos nouvelles pratiques</a>
       </div> 
       <div class="footer-col">
